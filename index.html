@@ -1,13 +1,248 @@
 <!DOCTYPE html>
-<html lang="es"
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Directorio de Empresas Pro Integridad</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <h1>Directorio de Empresas Pro Integridad</h1>
-    <h2>239 empresas acreditadas en 20 rubros empresariales</h2>
+    <header>
+        <div class="title-section">
+            <h1 align="center">Directorio de Empresas Pro Integridad</h1>
+        </div>
+        <div class="subtitle-section">
+            <h2 align="center"><span id="company-count">0</span> empresas acreditadas en 20 rubros empresariales</h2>
+        </div>
+        <div class="login-container">
+            <button class="login-button" onclick="toggleLoginForm()">Iniciar Sesión 🔑</button>
+        </div>
+    </header>
+
+    <div id="login-form" class="login-form">
+        <div class="login-form-content">
+            <form id="login-form-element" method="POST">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Loguearse</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner">
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <div id="admin-screen" class="admin-screen">
+        <p>Bienvenid@, <span id="admin-username">{{ username }}</span> al Directorio Pro Integridad Empresas</p>
+        <p>¿Qué te gustaría hacer el día de hoy?</p>
+        <button id="btn-register">Registrar Nueva Empresa</button>
+        <button id="btn-edit">Editar Empresa</button>
+        <button id="btn-delete">Eliminar Empresa</button>
+    </div>
+
+    <!-- ===================== FORMULARIO DE REGISTRO ===================== -->
+    <div id="form-register" class="form-register">
+        <div class="form-register-content">
+            <form id="form-register-element" method="POST">
+                <label for="company-name">Nombre de la Empresa</label>
+                <input type="text" id="company-name" name="company-name" required>
+
+                <label for="company-category">Categoría o Rubro Empresarial</label>
+                <select id="company-category" name="company-category" required>
+                    <option value="">Seleccionar</option>
+                    <option value="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</option>
+                    <option value="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</option>
+                    <option value="Industria Electrónica y Manufactura Avanzada">Industria Electrónica y Manufactura Avanzada</option>
+                    <option value="Tecnología, Software y Telecomunicaciones">Tecnología, Software y Telecomunicaciones</option>
+                    <option value="Salud, Hospitales y Servicios Médicos">Salud, Hospitales y Servicios Médicos</option>
+                    <option value="Industria Farmacéutica, Equipo Médico y Material de Curación">Industria Farmacéutica, Equipo Médico y Material de Curación</option>
+                    <option value="Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)">Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)</option>
+                    <option value="Transporte, Logística y Almacenamiento">Transporte, Logística y Almacenamiento</option>
+                    <option value="Sector Automotriz, Refacciones y Talleres">Sector Automotriz, Refacciones y Talleres</option>
+                    <option value="Servicios Jurídicos, Fiscales y Consultoría Empresarial">Servicios Jurídicos, Fiscales y Consultoría Empresarial</option>
+                    <option value="Seguridad Privada y Gestión de Riesgos">Seguridad Privada y Gestión de Riesgos</option>
+                    <option value="Servicios Inmobiliarios y Administración de Propiedades">Servicios Inmobiliarios y Administración de Propiedades</option>
+                    <option value="Energía, Medio Ambiente y Sustentabilidad">Energía, Medio Ambiente y Sustentabilidad</option>
+                    <option value="Textil, Confección, Calzado y Uniformes">Textil, Confección, Calzado y Uniformes</option>
+                    <option value="Educación, Capacitación y Asociaciones Civiles">Educación, Capacitación y Asociaciones Civiles</option>
+                    <option value="Marketing, Publicidad, Medios y Eventos">Marketing, Publicidad, Medios y Eventos</option>
+                    <option value="Turismo, Hotelería y Entretenimiento">Turismo, Hotelería y Entretenimiento</option>
+                    <option value="Muebles, Madera e Interiorismo">Muebles, Madera e Interiorismo</option>
+                    <option value="Servicios Financieros y Seguros">Servicios Financieros y Seguros</option>
+                    <option value="Servicios Generales y Especializados">Servicios Generales y Especializados</option>
+                </select>
+
+                <label for="company-municipality">Municipio</label>
+                <input type="text" id="company-municipality" name="company-municipality">
+
+                <label for="company-email-1">Email principal</label>
+                <input type="email" id="company-email-1" name="company-email-1" required>
+
+                <label for="company-email-2">Email adicional (opcional)</label>
+                <input type="email" id="company-email-2" name="company-email-2">
+
+                <label for="company-email-3">Email adicional (opcional)</label>
+                <input type="email" id="company-email-3" name="company-email-3">
+
+                <label for="company-phone">Teléfono (opcional)</label>
+                <input type="text" id="company-phone" name="company-phone">
+
+                <label for="company-acreditation-day">Fecha de acreditación</label>
+                <input type="date" id="company-acreditation-day" name="company-acreditation-day" required>
+
+                <button type="submit">Registrar Empresa</button>
+            </form>
+
+            <!-- ===================== VISTA PREVIA DE LA TARJETA DE REGISTRO ===================== -->
+
+            <div id="preview-register-card">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== FORMULARIO DE EDITAR ===================== -->
+    <div id="form-edit" class="form-edit">
+        <div class="form-edit-content">
+
+            <div id="search-edit-company" class="search-edit-company">
+                <form id="search-edit-form" method="GET">
+                    <label for="search-edit-input">Buscar Empresa por ID o Nombre</label>
+                    <input type="text" id="search-edit-input" name="search-edit-input" required>
+                    <button type="button" id="btn-search-edit">Buscar</button>
+                    <p id="error-message-edit" class="error-message" hidden>No se encontró ninguna empresa con ese ID o Nombre</p>
+                </form>
+            </div>
+
+            <div id="edit-company-form" class="edit-company-form" hidden>
+
+                <!-- Tarjeta de resumen: solo lectura, informativa -->
+                <div class="empresa-resumen">
+                    <p class="resumen-etiqueta">Empresa encontrada:</p>
+                    <div class="tarjeta">
+                        <div class="tarjeta-top">
+                            <span id="edit-resumen-rubro-icono" class="tarjeta-icono"></span>
+                            <span id="edit-resumen-estatus" class="badge"></span>
+                        </div>
+                        <p id="edit-resumen-nombre" class="tarjeta-nombre"></p>
+                        <p id="edit-resumen-rubro-municipio" class="tarjeta-detalle"></p>
+                        <div class="tarjeta-meta">
+                            <span id="edit-resumen-id"></span>
+                            <span id="edit-resumen-vigencia"></span>
+                            <span id="edit-resumen-cambio-estatus"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campo oculto: recuerda a qué empresa pertenece la edición -->
+                <input type="hidden" id="edit-empresa-id">
+
+                <form id="edit-company-form-element" method="POST">
+                    <label for="edit-company-name">Nombre de la Empresa</label>
+                    <input type="text" id="edit-company-name" name="edit-company-name" required>
+
+                    <label for="edit-company-category">Categoría o Rubro Empresarial</label>
+                    <select id="edit-company-category" name="edit-company-category" required>
+                        <option value="">Seleccionar</option>
+                        <option value="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</option>
+                        <option value="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</option>
+                        <option value="Industria Electrónica y Manufactura Avanzada">Industria Electrónica y Manufactura Avanzada</option>
+                        <option value="Tecnología, Software y Telecomunicaciones">Tecnología, Software y Telecomunicaciones</option>
+                        <option value="Salud, Hospitales y Servicios Médicos">Salud, Hospitales y Servicios Médicos</option>
+                        <option value="Industria Farmacéutica, Equipo Médico y Material de Curación">Industria Farmacéutica, Equipo Médico y Material de Curación</option>
+                        <option value="Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)">Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)</option>
+                        <option value="Transporte, Logística y Almacenamiento">Transporte, Logística y Almacenamiento</option>
+                        <option value="Sector Automotriz, Refacciones y Talleres">Sector Automotriz, Refacciones y Talleres</option>
+                        <option value="Servicios Jurídicos, Fiscales y Consultoría Empresarial">Servicios Jurídicos, Fiscales y Consultoría Empresarial</option>
+                        <option value="Seguridad Privada y Gestión de Riesgos">Seguridad Privada y Gestión de Riesgos</option>
+                        <option value="Servicios Inmobiliarios y Administración de Propiedades">Servicios Inmobiliarios y Administración de Propiedades</option>
+                        <option value="Energía, Medio Ambiente y Sustentabilidad">Energía, Medio Ambiente y Sustentabilidad</option>
+                        <option value="Textil, Confección, Calzado y Uniformes">Textil, Confección, Calzado y Uniformes</option>
+                        <option value="Educación, Capacitación y Asociaciones Civiles">Educación, Capacitación y Asociaciones Civiles</option>
+                        <option value="Marketing, Publicidad, Medios y Eventos">Marketing, Publicidad, Medios y Eventos</option>
+                        <option value="Turismo, Hotelería y Entretenimiento">Turismo, Hotelería y Entretenimiento</option>
+                        <option value="Muebles, Madera e Interiorismo">Muebles, Madera e Interiorismo</option>
+                        <option value="Servicios Financieros y Seguros">Servicios Financieros y Seguros</option>
+                        <option value="Servicios Generales y Especializados">Servicios Generales y Especializados</option>
+                    </select>
+
+                    <label for="edit-company-municipality">Municipio</label>
+                    <input type="text" id="edit-company-municipality" name="edit-company-municipality">
+
+                    <label for="edit-company-email-1">Email principal</label>
+                    <input type="email" id="edit-company-email-1" name="edit-company-email-1" required>
+
+                    <label for="edit-company-email-2">Email adicional (opcional)</label>
+                    <input type="email" id="edit-company-email-2" name="edit-company-email-2">
+
+                    <label for="edit-company-email-3">Email adicional (opcional)</label>
+                    <input type="email" id="edit-company-email-3" name="edit-company-email-3">
+
+                    <label for="edit-company-phone">Teléfono (opcional)</label>
+                    <input type="text" id="edit-company-phone" name="edit-company-phone">
+
+                    <label for="edit-company-acreditation-day">Fecha de acreditación</label>
+                    <input type="date" id="edit-company-acreditation-day" name="edit-company-acreditation-day" required>
+
+                    <button type="submit">Guardar cambios</button>
+                </form>
+
+                <!-- ===================== VISTA PREVIA DE LA TARJETA EDITAR ===================== -->
+
+                <div id="preview-edit-card">
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== FORMULARIO DE ELIMINAR ===================== -->
+    <div id="form-delete" class="form-delete">
+        <div class="form-delete-content">
+
+            <div id="search-delete-company" class="search-delete-company">
+                <form id="search-delete-form" method="GET">
+                    <label for="search-delete-input">Buscar Empresa por ID</label>
+                    <input type="text" id="search-delete-input" name="search-delete-input" required>
+                    <button type="button" id="btn-search-delete">Buscar</button>
+                    <p id="error-message-delete" class="error-message" hidden>No se encontró ninguna empresa con ese ID</p>
+                </form>
+            </div>
+
+            <div id="delete-company-form" class="delete-company-form" hidden>
+
+                <!-- Tarjeta de confirmación: la misma empresa que se va a eliminar -->
+                <div class="empresa-resumen">
+                    <div class="tarjeta">
+                        <div class="tarjeta-top">
+                            <span id="delete-resumen-rubro-icono" class="tarjeta-icono"></span>
+                            <span id="delete-resumen-estatus" class="badge"></span>
+                        </div>
+                        <p id="delete-resumen-nombre" class="tarjeta-nombre"></p>
+                        <p id="delete-resumen-rubro-municipio" class="tarjeta-detalle"></p>
+                    </div>
+                </div>
+
+                <input type="hidden" id="delete-empresa-id">
+
+                <form id="delete-company-form-element" method="POST">
+                    <p>¿Está seguro de que desea eliminar esta empresa?</p>
+                    <button type="submit" id="btn-confirmar-eliminar">Sí, eliminar</button>
+                    <button type="button" id="btn-cancelar-eliminar">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
