@@ -22,7 +22,7 @@
         </div>
     </header>
 
-    <div id="login-form" class="login-form">
+    <div id="login-form" class="login-form" hidden>
         <div class="login-form-content">
             <form id="login-form-element" method="POST">
                 <label for="username">Usuario</label>
@@ -34,13 +34,13 @@
         </div>
     </div>
 
-    <div id="loading-screen" class="loading-screen">
+    <div id="loading-screen" class="loading-screen" hidden>
         <div class="spinner">
             <p>Cargando...</p>
         </div>
     </div>
 
-    <div id="admin-screen" class="admin-screen">
+    <div id="admin-screen" class="admin-screen" hidden>
         <p>Bienvenid@, <span id="admin-username">{{ username }}</span> al Directorio Pro Integridad Empresas</p>
         <p>¿Qué te gustaría hacer el día de hoy?</p>
         <button id="btn-register">Registrar Nueva Empresa</button>
@@ -49,7 +49,7 @@
     </div>
 
     <!-- ===================== FORMULARIO DE REGISTRO ===================== -->
-    <div id="form-register" class="form-register">
+    <div id="form-register" class="form-register" hidden>
         <div class="form-register-content">
             <form id="form-register-element" method="POST">
                 <label for="company-name">Nombre de la Empresa</label>
@@ -110,7 +110,7 @@
     </div>
 
     <!-- ===================== FORMULARIO DE EDITAR ===================== -->
-    <div id="form-edit" class="form-edit">
+    <div id="form-edit" class="form-edit" hidden>
         <div class="form-edit-content">
 
             <div id="search-edit-company" class="search-edit-company">
@@ -125,19 +125,19 @@
             <div id="edit-company-form" class="edit-company-form" hidden>
 
                 <!-- Tarjeta de resumen: solo lectura, informativa -->
-                <div class="empresa-resumen">
-                    <p class="resumen-etiqueta">Empresa encontrada:</p>
-                    <div class="tarjeta">
-                        <div class="tarjeta-top">
-                            <span id="edit-resumen-rubro-icono" class="tarjeta-icono"></span>
-                            <span id="edit-resumen-estatus" class="badge"></span>
+                <div class="company-summary">
+                    <p class="summary-label">Empresa encontrada:</p>
+                    <div class="card">
+                        <div class="card-top">
+                            <span id="edit-summary-icon" class="icon-card"></span>
+                            <span id="edit-summary-estatus" class="badge"></span>
                         </div>
-                        <p id="edit-resumen-nombre" class="tarjeta-nombre"></p>
-                        <p id="edit-resumen-rubro-municipio" class="tarjeta-detalle"></p>
-                        <div class="tarjeta-meta">
-                            <span id="edit-resumen-id"></span>
-                            <span id="edit-resumen-vigencia"></span>
-                            <span id="edit-resumen-cambio-estatus"></span>
+                        <p id="edit-summary-name" class="card-name"></p>
+                        <p id="edit-summary-municipality" class="card-detail"></p>
+                        <div class="card-meta">
+                            <span id="edit-summary-id"></span>
+                            <span id="edit-summary-validity"></span>
+                            <span id="edit-summary-change-status"></span>
                         </div>
                     </div>
                 </div>
@@ -199,14 +199,13 @@
 
                 <div id="preview-edit-card">
 
-                </div>
-                
+                </div>      
             </div>
         </div>
     </div>
 
     <!-- ===================== FORMULARIO DE ELIMINAR ===================== -->
-    <div id="form-delete" class="form-delete">
+    <div id="form-delete" class="form-delete" hidden>
         <div class="form-delete-content">
 
             <div id="search-delete-company" class="search-delete-company">
@@ -221,26 +220,130 @@
             <div id="delete-company-form" class="delete-company-form" hidden>
 
                 <!-- Tarjeta de confirmación: la misma empresa que se va a eliminar -->
-                <div class="empresa-resumen">
-                    <div class="tarjeta">
-                        <div class="tarjeta-top">
-                            <span id="delete-resumen-rubro-icono" class="tarjeta-icono"></span>
-                            <span id="delete-resumen-estatus" class="badge"></span>
+                <div class="company-summary">
+                    <div class="card">
+                        <div class="card-top">
+                            <span id="delete-summary-icon" class="icon-card"></span>
+                            <span id="delete-summary-estatus" class="badge"></span>
                         </div>
-                        <p id="delete-resumen-nombre" class="tarjeta-nombre"></p>
-                        <p id="delete-resumen-rubro-municipio" class="tarjeta-detalle"></p>
+                        <p id="delete-summary-name" class="name-card"></p>
+                        <p id="delete-summary-municipality" class="detail-card"></p>
                     </div>
                 </div>
 
-                <input type="hidden" id="delete-empresa-id">
+                <input type="hidden" id="delete-company-id">
 
                 <form id="delete-company-form-element" method="POST">
                     <p>¿Está seguro de que desea eliminar esta empresa?</p>
-                    <button type="submit" id="btn-confirmar-eliminar">Sí, eliminar</button>
-                    <button type="button" id="btn-cancelar-eliminar">Cancelar</button>
+                    <button type="submit" id="btn-delete">Sí, eliminar</button>
+                    <button type="button" id="btn-cancel-delete">Cancelar</button>
                 </form>
             </div>
         </div>
+    </div>
+
+    <!-- ===================== FILTROS Y BUSCADOR ===================== -->
+
+    <div id="searcher" class="searcher">
+        <div class="searcher-content">
+            <button type="button" id="btn-company">Todos</button>
+            <button type="button" id="btn-category">Ver los 20 rubros</button>
+            <ul id="option-list" hidden>
+                <li>
+                    <button type="button" data-rubro="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Industria Electrónica y Manufactura Avanzada">Industria Electrónica y Manufactura Avanzada</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Tecnología, Software y Telecomunicaciones">Tecnología, Software y Telecomunicaciones</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Salud, Hospitales y Servicios Médicos">Salud, Hospitales y Servicios Médicos</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Industria Farmacéutica, Equipo Médico y Material de Curación">Industria Farmacéutica, Equipo Médico y Material de Curación</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)">Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Transporte, Logística y Almacenamiento">Transporte, Logística y Almacenamiento</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Sector Automotriz, Refacciones y Talleres">Sector Automotriz, Refacciones y Talleres</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Servicios Jurídicos, Fiscales y Consultoría Empresarial">Servicios Jurídicos, Fiscales y Consultoría Empresarial</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Seguridad Privada y Gestión de Riesgos">Seguridad Privada y Gestión de Riesgos</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Servicios Inmobiliarios y Administración de Propiedades">Servicios Inmobiliarios y Administración de Propiedades</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Energía, Medio Ambiente y Sustentabilidad">Energía, Medio Ambiente y Sustentabilidad</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Textil, Confección, Calzado y Uniformes">Textil, Confección, Calzado y Uniformes</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Educación, Capacitación y Asociaciones Civiles">Educación, Capacitación y Asociaciones Civiles</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Marketing, Publicidad, Medios y Eventos">Marketing, Publicidad, Medios y Eventos</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Turismo, Hotelería y Entretenimiento">Turismo, Hotelería y Entretenimiento</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Muebles, Madera e Interiorismo">Muebles, Madera e Interiorismo</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Servicios Financieros y Seguros">Servicios Financieros y Seguros</button>
+                </li>
+                <li>
+                    <button type="button" data-rubro="Servicios Generales y Especializados">Servicios Generales y Especializados</button>
+                </li>
+            </ul>
+            <form id="search-form" method="GET">
+                <label for="search-input" class="sr-only">Buscar empresa por nombre, municipio o rubro</label>
+                <input type="text" id="search-input" placeholder="🔎 Buscar empresa por nombre, municipio o rubro...">
+                <ul id="search-sugestions"></ul>
+                <p id="error-message" class="error-message" hidden>No se encontraron empresas que coincidan con tu búsqueda</p>
+            </form>
+        </div>
+    </div>
+
+     <!-- ===================== Tarjetas de Empresas ===================== -->
+
+    <div id="company-container">
+        <div data-id="1" data-rubro="Construcción, Arquitectura y Obra Civil" data-estatus="Acreditada" class="company-card">
+            <div class="top-card">
+                <span class="icon-card">🏗️</span>
+                <span class="badge">Acreditada</span>
+                <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+            </div>
+            <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+            <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+            <button type="button" class="btn-contact">✉️ Contactar</button>
+        </div>
+    </div>
+
+    <!-- ===================== Paginación ===================== -->
+
+    <div id="pagination">
+        <button type="button" id="btn-previous-page"> ← </button>
+        <button type="button" data-page="1" class="active-page">1</button>
+        <button type="button" data-page="2">2</button>
+        <button type="button" data-page="3">3</button>
+        <span class="ellipses">···</span>
+        <button type="button" data-page="30">30</button>
+        <button type="button" id="btn-next-page"> → </button>
     </div>
 
     <script src="js/app.js"></script>
