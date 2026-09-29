@@ -10,147 +10,56 @@
 </head>
 
 <body>
-    <header>
-        <div class="title-section">
-            <h1 align="center">Directorio de Empresas Pro Integridad</h1>
+    <div id="page-container">
+        <div id="top-bar">
+            <a href="#" id="btn-return-page">← Volver a Pro Integridad Empresas</a>
+            <button type="button" class="login-button" id="btn-login">🔒Iniciar Sesión</button>
         </div>
-        <div class="subtitle-section">
-            <h2 align="center"><span id="company-count">0</span> empresas acreditadas en 20 rubros empresariales</h2>
-        </div>
-        <div class="login-container">
-            <button class="login-button" onclick="toggleLoginForm()">Iniciar Sesión 🔑</button>
-        </div>
-    </header>
-
-    <div id="login-form" class="login-form" hidden>
-        <div class="login-form-content">
-            <form id="login-form-element" method="POST">
-                <label for="username">Usuario</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Loguearse</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="loading-screen" class="loading-screen" hidden>
-        <div class="spinner">
-            <p>Cargando...</p>
-        </div>
-    </div>
-
-    <div id="admin-screen" class="admin-screen" hidden>
-        <p>Bienvenid@, <span id="admin-username">{{ username }}</span> al Directorio Pro Integridad Empresas</p>
-        <p>¿Qué te gustaría hacer el día de hoy?</p>
-        <button id="btn-register">Registrar Nueva Empresa</button>
-        <button id="btn-edit">Editar Empresa</button>
-        <button id="btn-delete">Eliminar Empresa</button>
-    </div>
-
-    <!-- ===================== FORMULARIO DE REGISTRO ===================== -->
-    <div id="form-register" class="form-register" hidden>
-        <div class="form-register-content">
-            <form id="form-register-element" method="POST">
-                <label for="company-name">Nombre de la Empresa</label>
-                <input type="text" id="company-name" name="company-name" required>
-
-                <label for="company-category">Categoría o Rubro Empresarial</label>
-                <select id="company-category" name="company-category" required>
-                    <option value="">Seleccionar</option>
-                    <option value="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</option>
-                    <option value="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</option>
-                    <option value="Industria Electrónica y Manufactura Avanzada">Industria Electrónica y Manufactura Avanzada</option>
-                    <option value="Tecnología, Software y Telecomunicaciones">Tecnología, Software y Telecomunicaciones</option>
-                    <option value="Salud, Hospitales y Servicios Médicos">Salud, Hospitales y Servicios Médicos</option>
-                    <option value="Industria Farmacéutica, Equipo Médico y Material de Curación">Industria Farmacéutica, Equipo Médico y Material de Curación</option>
-                    <option value="Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)">Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)</option>
-                    <option value="Transporte, Logística y Almacenamiento">Transporte, Logística y Almacenamiento</option>
-                    <option value="Sector Automotriz, Refacciones y Talleres">Sector Automotriz, Refacciones y Talleres</option>
-                    <option value="Servicios Jurídicos, Fiscales y Consultoría Empresarial">Servicios Jurídicos, Fiscales y Consultoría Empresarial</option>
-                    <option value="Seguridad Privada y Gestión de Riesgos">Seguridad Privada y Gestión de Riesgos</option>
-                    <option value="Servicios Inmobiliarios y Administración de Propiedades">Servicios Inmobiliarios y Administración de Propiedades</option>
-                    <option value="Energía, Medio Ambiente y Sustentabilidad">Energía, Medio Ambiente y Sustentabilidad</option>
-                    <option value="Textil, Confección, Calzado y Uniformes">Textil, Confección, Calzado y Uniformes</option>
-                    <option value="Educación, Capacitación y Asociaciones Civiles">Educación, Capacitación y Asociaciones Civiles</option>
-                    <option value="Marketing, Publicidad, Medios y Eventos">Marketing, Publicidad, Medios y Eventos</option>
-                    <option value="Turismo, Hotelería y Entretenimiento">Turismo, Hotelería y Entretenimiento</option>
-                    <option value="Muebles, Madera e Interiorismo">Muebles, Madera e Interiorismo</option>
-                    <option value="Servicios Financieros y Seguros">Servicios Financieros y Seguros</option>
-                    <option value="Servicios Generales y Especializados">Servicios Generales y Especializados</option>
-                </select>
-
-                <label for="company-municipality">Municipio</label>
-                <input type="text" id="company-municipality" name="company-municipality">
-
-                <label for="company-email-1">Email principal</label>
-                <input type="email" id="company-email-1" name="company-email-1" required>
-
-                <label for="company-email-2">Email adicional (opcional)</label>
-                <input type="email" id="company-email-2" name="company-email-2">
-
-                <label for="company-email-3">Email adicional (opcional)</label>
-                <input type="email" id="company-email-3" name="company-email-3">
-
-                <label for="company-phone">Teléfono (opcional)</label>
-                <input type="text" id="company-phone" name="company-phone">
-
-                <label for="company-acreditation-day">Fecha de acreditación</label>
-                <input type="date" id="company-acreditation-day" name="company-acreditation-day" required>
-
-                <button type="submit">Registrar Empresa</button>
-            </form>
-
-            <!-- ===================== VISTA PREVIA DE LA TARJETA DE REGISTRO ===================== -->
-
-            <div id="preview-register-card">
-
+    
+        <header>
+            <div class="title-section">
+                <h1 align="center">Directorio de Empresas Pro Integridad</h1>
             </div>
-        </div>
-    </div>
-
-    <!-- ===================== FORMULARIO DE EDITAR ===================== -->
-    <div id="form-edit" class="form-edit" hidden>
-        <div class="form-edit-content">
-
-            <div id="search-edit-company" class="search-edit-company">
-                <form id="search-edit-form" method="GET">
-                    <label for="search-edit-input">Buscar Empresa por ID o Nombre</label>
-                    <input type="text" id="search-edit-input" name="search-edit-input" required>
-                    <button type="button" id="btn-search-edit">Buscar</button>
-                    <p id="error-message-edit" class="error-message" hidden>No se encontró ninguna empresa con ese ID o Nombre</p>
+            <div class="subtitle-section">
+                <h2 align="center"><span id="company-count">0</span> empresas acreditadas en <span id="subtitle-category-count">0</span> rubros empresariales</h2>
+            </div>
+        </header>
+    
+        <div id="login-form" class="login-form" hidden>
+            <div class="login-form-content">
+                <form id="login-form-element" method="POST">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Loguearse</button>
                 </form>
             </div>
-
-            <div id="edit-company-form" class="edit-company-form" hidden>
-
-                <!-- Tarjeta de resumen: solo lectura, informativa -->
-                <div class="company-summary">
-                    <p class="summary-label">Empresa encontrada:</p>
-                    <div class="card">
-                        <div class="card-top">
-                            <span id="edit-summary-icon" class="icon-card"></span>
-                            <span id="edit-summary-estatus" class="badge"></span>
-                        </div>
-                        <p id="edit-summary-name" class="card-name"></p>
-                        <p id="edit-summary-municipality" class="card-detail"></p>
-                        <div class="card-meta">
-                            <span id="edit-summary-id"></span>
-                            <span id="edit-summary-validity"></span>
-                            <span id="edit-summary-change-status"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Campo oculto: recuerda a qué empresa pertenece la edición -->
-                <input type="hidden" id="edit-empresa-id">
-
-                <form id="edit-company-form-element" method="POST">
-                    <label for="edit-company-name">Nombre de la Empresa</label>
-                    <input type="text" id="edit-company-name" name="edit-company-name" required>
-
-                    <label for="edit-company-category">Categoría o Rubro Empresarial</label>
-                    <select id="edit-company-category" name="edit-company-category" required>
+        </div>
+    
+        <div id="loading-screen" class="loading-screen" hidden>
+            <div class="spinner">
+                <p>Cargando...</p>
+            </div>
+        </div>
+    
+        <div id="admin-screen" class="admin-screen" hidden>
+            <p>Bienvenid@, <span id="admin-username">{{ username }}</span> al Directorio Pro Integridad Empresas</p>
+            <p>¿Qué te gustaría hacer el día de hoy?</p>
+            <button type="button" id="btn-register">Registrar Nueva Empresa</button>
+            <button type="button" id="btn-edit">Editar Empresa</button>
+            <button type="button" id="btn-delete">Eliminar Empresa</button>
+        </div>
+    
+        <!-- ===================== FORMULARIO DE REGISTRO ===================== -->
+        <div id="form-register" class="form-register" hidden>
+            <div class="form-register-content">
+                <form id="form-register-element" method="POST">
+                    <label for="company-name">Nombre de la Empresa</label>
+                    <input type="text" id="company-name" name="company-name" required>
+    
+                    <label for="company-category">Categoría o Rubro Empresarial</label>
+                    <select id="company-category" name="company-category" required>
                         <option value="">Seleccionar</option>
                         <option value="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</option>
                         <option value="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</option>
@@ -173,177 +82,364 @@
                         <option value="Servicios Financieros y Seguros">Servicios Financieros y Seguros</option>
                         <option value="Servicios Generales y Especializados">Servicios Generales y Especializados</option>
                     </select>
-
-                    <label for="edit-company-municipality">Municipio</label>
-                    <input type="text" id="edit-company-municipality" name="edit-company-municipality">
-
-                    <label for="edit-company-email-1">Email principal</label>
-                    <input type="email" id="edit-company-email-1" name="edit-company-email-1" required>
-
-                    <label for="edit-company-email-2">Email adicional (opcional)</label>
-                    <input type="email" id="edit-company-email-2" name="edit-company-email-2">
-
-                    <label for="edit-company-email-3">Email adicional (opcional)</label>
-                    <input type="email" id="edit-company-email-3" name="edit-company-email-3">
-
-                    <label for="edit-company-phone">Teléfono (opcional)</label>
-                    <input type="text" id="edit-company-phone" name="edit-company-phone">
-
-                    <label for="edit-company-acreditation-day">Fecha de acreditación</label>
-                    <input type="date" id="edit-company-acreditation-day" name="edit-company-acreditation-day" required>
-
-                    <button type="submit">Guardar cambios</button>
+    
+                    <label for="company-municipality">Municipio</label>
+                    <input type="text" id="company-municipality" name="company-municipality">
+    
+                    <label for="company-email-1">Email principal</label>
+                    <input type="email" id="company-email-1" name="company-email-1" required>
+    
+                    <label for="company-email-2">Email adicional (opcional)</label>
+                    <input type="email" id="company-email-2" name="company-email-2">
+    
+                    <label for="company-email-3">Email adicional (opcional)</label>
+                    <input type="email" id="company-email-3" name="company-email-3">
+    
+                    <label for="company-phone">Teléfono (opcional)</label>
+                    <input type="text" id="company-phone" name="company-phone">
+    
+                    <label for="company-accreditation-day">Fecha de acreditación</label>
+                    <input type="date" id="company-accreditation-day" name="company-accreditation-day" required>
+    
+                    <button type="submit">Registrar Empresa</button>
                 </form>
-
-                <!-- ===================== VISTA PREVIA DE LA TARJETA EDITAR ===================== -->
-
-                <div id="preview-edit-card">
-
-                </div>      
-            </div>
-        </div>
-    </div>
-
-    <!-- ===================== FORMULARIO DE ELIMINAR ===================== -->
-    <div id="form-delete" class="form-delete" hidden>
-        <div class="form-delete-content">
-
-            <div id="search-delete-company" class="search-delete-company">
-                <form id="search-delete-form" method="GET">
-                    <label for="search-delete-input">Buscar Empresa por ID</label>
-                    <input type="text" id="search-delete-input" name="search-delete-input" required>
-                    <button type="button" id="btn-search-delete">Buscar</button>
-                    <p id="error-message-delete" class="error-message" hidden>No se encontró ninguna empresa con ese ID</p>
-                </form>
-            </div>
-
-            <div id="delete-company-form" class="delete-company-form" hidden>
-
-                <!-- Tarjeta de confirmación: la misma empresa que se va a eliminar -->
-                <div class="company-summary">
-                    <div class="card">
-                        <div class="card-top">
-                            <span id="delete-summary-icon" class="icon-card"></span>
-                            <span id="delete-summary-estatus" class="badge"></span>
-                        </div>
-                        <p id="delete-summary-name" class="name-card"></p>
-                        <p id="delete-summary-municipality" class="detail-card"></p>
-                    </div>
+    
+                <!-- ===================== VISTA PREVIA DE LA TARJETA DE REGISTRO ===================== -->
+    
+                <div id="preview-register-card">
+    
                 </div>
-
-                <input type="hidden" id="delete-company-id">
-
-                <form id="delete-company-form-element" method="POST">
-                    <p>¿Está seguro de que desea eliminar esta empresa?</p>
-                    <button type="submit" id="btn-delete">Sí, eliminar</button>
-                    <button type="button" id="btn-cancel-delete">Cancelar</button>
+            </div>
+        </div>
+    
+        <!-- ===================== FORMULARIO DE EDITAR ===================== -->
+        <div id="form-edit" class="form-edit" hidden>
+            <div class="form-edit-content">
+    
+                <div id="search-edit-company" class="search-edit-company">
+                    <form id="search-edit-form" method="GET">
+                        <label for="search-edit-input">Buscar Empresa por ID o Nombre</label>
+                        <input type="text" id="search-edit-input" name="search-edit-input" required>
+                        <button type="button" id="btn-search-edit">Buscar</button>
+                        <p id="error-message-edit" class="error-message" hidden>No se encontró ninguna empresa con ese ID o Nombre</p>
+                    </form>
+                </div>
+    
+                <div id="edit-company-form" class="edit-company-form" hidden>
+    
+                    <!-- Tarjeta de resumen: solo lectura, informativa -->
+                    <div class="company-summary">
+                        <p class="summary-label">Empresa encontrada:</p>
+                        <div class="card">
+                            <div class="top-card">
+                                <span id="edit-summary-icon" class="icon-card"></span>
+                                <span id="edit-summary-status" class="badge"></span>
+                            </div>
+    
+                            <p id="edit-summary-name" class="name-card"></p>
+                            <p id="edit-summary-municipality" class="detail-card"></p>
+    
+                            <div class="card-meta">
+                                <span id="edit-summary-id"></span>
+                                <span id="edit-summary-validity"></span>
+                                <span id="edit-summary-change-status"></span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Campo oculto: recuerda a qué empresa pertenece la edición -->
+                    <input type="hidden" id="edit-company-id">
+    
+                    <form id="edit-company-form-element" method="POST">
+                        <label for="edit-company-name">Nombre de la Empresa</label>
+                        <input type="text" id="edit-company-name" name="edit-company-name" required>
+    
+                        <label for="edit-company-category">Categoría o Rubro Empresarial</label>
+                        <select id="edit-company-category" name="edit-company-category" required>
+                            <option value="">Seleccionar</option>
+                            <option value="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</option>
+                            <option value="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</option>
+                            <option value="Industria Electrónica y Manufactura Avanzada">Industria Electrónica y Manufactura Avanzada</option>
+                            <option value="Tecnología, Software y Telecomunicaciones">Tecnología, Software y Telecomunicaciones</option>
+                            <option value="Salud, Hospitales y Servicios Médicos">Salud, Hospitales y Servicios Médicos</option>
+                            <option value="Industria Farmacéutica, Equipo Médico y Material de Curación">Industria Farmacéutica, Equipo Médico y Material de Curación</option>
+                            <option value="Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)">Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)</option>
+                            <option value="Transporte, Logística y Almacenamiento">Transporte, Logística y Almacenamiento</option>
+                            <option value="Sector Automotriz, Refacciones y Talleres">Sector Automotriz, Refacciones y Talleres</option>
+                            <option value="Servicios Jurídicos, Fiscales y Consultoría Empresarial">Servicios Jurídicos, Fiscales y Consultoría Empresarial</option>
+                            <option value="Seguridad Privada y Gestión de Riesgos">Seguridad Privada y Gestión de Riesgos</option>
+                            <option value="Servicios Inmobiliarios y Administración de Propiedades">Servicios Inmobiliarios y Administración de Propiedades</option>
+                            <option value="Energía, Medio Ambiente y Sustentabilidad">Energía, Medio Ambiente y Sustentabilidad</option>
+                            <option value="Textil, Confección, Calzado y Uniformes">Textil, Confección, Calzado y Uniformes</option>
+                            <option value="Educación, Capacitación y Asociaciones Civiles">Educación, Capacitación y Asociaciones Civiles</option>
+                            <option value="Marketing, Publicidad, Medios y Eventos">Marketing, Publicidad, Medios y Eventos</option>
+                            <option value="Turismo, Hotelería y Entretenimiento">Turismo, Hotelería y Entretenimiento</option>
+                            <option value="Muebles, Madera e Interiorismo">Muebles, Madera e Interiorismo</option>
+                            <option value="Servicios Financieros y Seguros">Servicios Financieros y Seguros</option>
+                            <option value="Servicios Generales y Especializados">Servicios Generales y Especializados</option>
+                        </select>
+    
+                        <label for="edit-company-municipality">Municipio</label>
+                        <input type="text" id="edit-company-municipality" name="edit-company-municipality">
+    
+                        <label for="edit-company-email-1">Email principal</label>
+                        <input type="email" id="edit-company-email-1" name="edit-company-email-1" required>
+    
+                        <label for="edit-company-email-2">Email adicional (opcional)</label>
+                        <input type="email" id="edit-company-email-2" name="edit-company-email-2">
+    
+                        <label for="edit-company-email-3">Email adicional (opcional)</label>
+                        <input type="email" id="edit-company-email-3" name="edit-company-email-3">
+    
+                        <label for="edit-company-phone">Teléfono (opcional)</label>
+                        <input type="text" id="edit-company-phone" name="edit-company-phone">
+    
+                        <label for="edit-company-accreditation-day">Fecha de acreditación</label>
+                        <input type="date" id="edit-company-accreditation-day" name="edit-company-accreditation-day" required>
+    
+                        <button type="submit">Guardar cambios</button>
+                    </form>
+    
+                    <!-- ===================== VISTA PREVIA DE LA TARJETA EDITAR ===================== -->
+    
+                    <div id="preview-edit-card">
+    
+                    </div>      
+                </div>
+            </div>
+        </div>
+    
+        <!-- ===================== FORMULARIO DE ELIMINAR ===================== -->
+        <div id="form-delete" class="form-delete" hidden>
+            <div class="form-delete-content">
+    
+                <div id="search-delete-company" class="search-delete-company">
+                    <form id="search-delete-form" method="GET">
+                        <label for="search-delete-input">Buscar Empresa por ID</label>
+                        <input type="text" id="search-delete-input" name="search-delete-input" required>
+                        <button type="button" id="btn-search-delete">Buscar</button>
+                        <p id="error-message-delete" class="error-message" hidden>No se encontró ninguna empresa con ese ID</p>
+                    </form>
+                </div>
+    
+                <div id="delete-company-form" class="delete-company-form" hidden>
+    
+                    <!-- Tarjeta de confirmación: la misma empresa que se va a eliminar -->
+                    <div class="company-summary">
+                        <div class="card">
+                            <div class="top-card">
+                                <span id="delete-summary-icon" class="icon-card"></span>
+                                <span id="delete-summary-status" class="badge"></span>
+                            </div>
+    
+                            <p id="delete-summary-name" class="name-card"></p>
+                            <p id="delete-summary-municipality" class="detail-card"></p>
+    
+                        </div>
+                    </div>
+    
+                    <input type="hidden" id="delete-company-id">
+    
+                    <form id="delete-company-form-element" method="POST">
+                        <p>¿Está seguro de que desea eliminar esta empresa?</p>
+                        <button type="submit" id="btn-delete">Sí, eliminar</button>
+                        <button type="button" id="btn-cancel-delete">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <!-- ===================== FILTROS Y BUSCADOR ===================== -->
+    
+        <div id="searcher" class="searcher">
+            <div class="searcher-content">
+                <button type="button" id="btn-company">Todos</button>
+                <button type="button" id="btn-category">Ver los <span id="category-company-count">0</span> rubros</button>
+                <ul id="option-list" hidden>
+                    <li>
+                        <button type="button" data-category="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Industria Electrónica y Manufactura Avanzada">Industria Electrónica y Manufactura Avanzada</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Tecnología, Software y Telecomunicaciones">Tecnología, Software y Telecomunicaciones</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Salud, Hospitales y Servicios Médicos">Salud, Hospitales y Servicios Médicos</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Industria Farmacéutica, Equipo Médico y Material de Curación">Industria Farmacéutica, Equipo Médico y Material de Curación</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)">Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Transporte, Logística y Almacenamiento">Transporte, Logística y Almacenamiento</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Sector Automotriz, Refacciones y Talleres">Sector Automotriz, Refacciones y Talleres</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Servicios Jurídicos, Fiscales y Consultoría Empresarial">Servicios Jurídicos, Fiscales y Consultoría Empresarial</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Seguridad Privada y Gestión de Riesgos">Seguridad Privada y Gestión de Riesgos</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Servicios Inmobiliarios y Administración de Propiedades">Servicios Inmobiliarios y Administración de Propiedades</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Energía, Medio Ambiente y Sustentabilidad">Energía, Medio Ambiente y Sustentabilidad</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Textil, Confección, Calzado y Uniformes">Textil, Confección, Calzado y Uniformes</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Educación, Capacitación y Asociaciones Civiles">Educación, Capacitación y Asociaciones Civiles</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Marketing, Publicidad, Medios y Eventos">Marketing, Publicidad, Medios y Eventos</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Turismo, Hotelería y Entretenimiento">Turismo, Hotelería y Entretenimiento</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Muebles, Madera e Interiorismo">Muebles, Madera e Interiorismo</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Servicios Financieros y Seguros">Servicios Financieros y Seguros</button>
+                    </li>
+                    <li>
+                        <button type="button" data-category="Servicios Generales y Especializados">Servicios Generales y Especializados</button>
+                    </li>
+                </ul>
+                <form id="search-form" method="GET">
+                    <label for="search-input" class="sr-only"> | &nbsp; 🔎</label>
+                    <input type="text" id="search-input" placeholder="Buscar empresa por nombre, municipio o rubro...">
+                    <ul id="search-suggestions"></ul>
+                    <p id="error-message" class="error-message" hidden>No se encontraron empresas que coincidan con tu búsqueda</p>
                 </form>
             </div>
         </div>
-    </div>
-
-    <!-- ===================== FILTROS Y BUSCADOR ===================== -->
-
-    <div id="searcher" class="searcher">
-        <div class="searcher-content">
-            <button type="button" id="btn-company">Todos</button>
-            <button type="button" id="btn-category">Ver los 20 rubros</button>
-            <ul id="option-list" hidden>
-                <li>
-                    <button type="button" data-rubro="Construcción, Arquitectura y Obra Civil">Construcción, Arquitectura y Obra Civil</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Proveedores de la Construcción, Ferretería y Materiales">Proveedores de la Construcción, Ferretería y Materiales</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Industria Electrónica y Manufactura Avanzada">Industria Electrónica y Manufactura Avanzada</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Tecnología, Software y Telecomunicaciones">Tecnología, Software y Telecomunicaciones</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Salud, Hospitales y Servicios Médicos">Salud, Hospitales y Servicios Médicos</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Industria Farmacéutica, Equipo Médico y Material de Curación">Industria Farmacéutica, Equipo Médico y Material de Curación</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)">Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Transporte, Logística y Almacenamiento">Transporte, Logística y Almacenamiento</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Sector Automotriz, Refacciones y Talleres">Sector Automotriz, Refacciones y Talleres</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Servicios Jurídicos, Fiscales y Consultoría Empresarial">Servicios Jurídicos, Fiscales y Consultoría Empresarial</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Seguridad Privada y Gestión de Riesgos">Seguridad Privada y Gestión de Riesgos</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Servicios Inmobiliarios y Administración de Propiedades">Servicios Inmobiliarios y Administración de Propiedades</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Energía, Medio Ambiente y Sustentabilidad">Energía, Medio Ambiente y Sustentabilidad</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Textil, Confección, Calzado y Uniformes">Textil, Confección, Calzado y Uniformes</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Educación, Capacitación y Asociaciones Civiles">Educación, Capacitación y Asociaciones Civiles</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Marketing, Publicidad, Medios y Eventos">Marketing, Publicidad, Medios y Eventos</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Turismo, Hotelería y Entretenimiento">Turismo, Hotelería y Entretenimiento</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Muebles, Madera e Interiorismo">Muebles, Madera e Interiorismo</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Servicios Financieros y Seguros">Servicios Financieros y Seguros</button>
-                </li>
-                <li>
-                    <button type="button" data-rubro="Servicios Generales y Especializados">Servicios Generales y Especializados</button>
-                </li>
-            </ul>
-            <form id="search-form" method="GET">
-                <label for="search-input" class="sr-only">Buscar empresa por nombre, municipio o rubro</label>
-                <input type="text" id="search-input" placeholder="🔎 Buscar empresa por nombre, municipio o rubro...">
-                <ul id="search-sugestions"></ul>
-                <p id="error-message" class="error-message" hidden>No se encontraron empresas que coincidan con tu búsqueda</p>
-            </form>
-        </div>
-    </div>
-
-     <!-- ===================== Tarjetas de Empresas ===================== -->
-
-    <div id="company-container">
-        <div data-id="1" data-rubro="Construcción, Arquitectura y Obra Civil" data-estatus="Acreditada" class="company-card">
-            <div class="top-card">
-                <span class="icon-card">🏗️</span>
-                <span class="badge">Acreditada</span>
-                <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+    
+         <!-- ===================== Tarjetas de Empresas ===================== -->
+    
+        <div id="company-container">
+            <div data-id="1" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
             </div>
-            <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-            <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-            <button type="button" class="btn-contact">✉️ Contactar</button>
+
+            <div data-id="2" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
+
+            <div data-id="3" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
+
+            <div data-id="4" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
+
+            <div data-id="5" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
+
+            <div data-id="6" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
+
+            <div data-id="7" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
+
+            <div data-id="8" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
+
+            <div data-id="9" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
+                <div class="top-card">
+                    <span class="icon-card">🏗️</span>
+                    <span class="badge">Acreditada</span>
+                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
+                </div>
+                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
+                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
+                <button type="button" class="btn-contact">✉️ Contactar</button>
+            </div>
         </div>
-    </div>
-
-    <!-- ===================== Paginación ===================== -->
-
-    <div id="pagination">
-        <button type="button" id="btn-previous-page"> ← </button>
-        <button type="button" data-page="1" class="active-page">1</button>
-        <button type="button" data-page="2">2</button>
-        <button type="button" data-page="3">3</button>
-        <span class="ellipses">···</span>
-        <button type="button" data-page="30">30</button>
-        <button type="button" id="btn-next-page"> → </button>
+    
+        <!-- ===================== Paginación ===================== -->
+    
+        <div id="pagination">
+            <button type="button" id="btn-previous-page"> ← </button>
+            <button type="button" data-page="1" class="active-page">1</button>
+            <button type="button" data-page="2">2</button>
+            <button type="button" data-page="3">3</button>
+            <span class="ellipses">···</span>
+            <button type="button" data-page="30">30</button>
+            <button type="button" id="btn-next-page"> → </button>
+        </div>
     </div>
 
     <script src="js/app.js"></script>
