@@ -317,8 +317,15 @@
                         <button type="button" data-category="Servicios Generales y Especializados">Servicios Generales y Especializados</button>
                     </li>
                 </ul>
-                <form id="search-form" method="GET">
+                <!--<form id="search-form" method="GET">
                     <label for="search-input" class="sr-only"> | &nbsp; 🔎</label>
+                    <input type="text" id="search-input" placeholder="Buscar empresa por nombre, municipio o rubro...">
+                    <ul id="search-suggestions"></ul>
+                    <p id="error-message" class="error-message" hidden>No se encontraron empresas que coincidan con tu búsqueda</p>
+                </form> -->
+                <form id="search-form" method="GET">
+                    <label for="search-input" class="sr-only">Buscar empresa por nombre, municipio o rubro</label>
+                    <span class="search-divider" aria-hidden="true">| 🔎</span>
                     <input type="text" id="search-input" placeholder="Buscar empresa por nombre, municipio o rubro...">
                     <ul id="search-suggestions"></ul>
                     <p id="error-message" class="error-message" hidden>No se encontraron empresas que coincidan con tu búsqueda</p>

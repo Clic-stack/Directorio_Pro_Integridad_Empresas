@@ -31,7 +31,6 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: var(--color-fondo-pagina);
     color: var(--color-texto-principal);
 }
 
@@ -161,6 +160,21 @@ header h1 {
     font-size: 13px;
     font-weight: bold;
     background: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sr-only { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip: rect(0, 0, 0, 0); 
+    white-space: nowrap; 
+    border: 0; 
 }
 
 /* Lista de los 20 rubros: flota debajo del botón, oculta por defecto */
@@ -425,6 +439,14 @@ header h1 {
 }
 
 @media (max-width: 710px) {
+    #page-container { 
+        margin: 0; 
+        border: none; 
+        border-radius: 0; 
+        width: 100%;
+        padding: var(--espaciado-md); 
+    }
+
     /* BARRA SUPERIOR (volver + login) */
     #btn-return-page {
         font-size: 10px;
@@ -440,7 +462,7 @@ header h1 {
     }
 
     .subtitle-section h2 {
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 400 bold;
     }
 
@@ -451,20 +473,89 @@ header h1 {
     }
 
     #btn-company {
+        font-size: 10px;
+        padding: 2px 4px;
+        flex-shrink: 0;
+    }
+
+    #btn-category {
+        font-size: 10px;
+        padding: 2px 4px;
+        flex-shrink: 0;
+    }
+
+    #search-form {
+        padding: 2px 3px;
+        flex-basis: 100%;
+    }
+
+    .sr-only {
+        font-size: 10px;
+    }
+
+    #search-input {
+        font-size: 10px;
+    }
+
+    #option-list li button {
+        font-size: 10px;
+    }
+ }
+
+ @media (max-width: 425px) {
+    #page-container { 
+        margin: 0; 
+        border: none; 
+        border-radius: 0; 
+        width: 100%;
+        padding: var(--espaciado-md); 
+    }
+
+    /* BARRA SUPERIOR (volver + login) */
+    #btn-return-page {
+        font-size: 8px;
+    }
+
+    .login-button {
+        font-size: 8px;
+    }
+
+    /* HEADER (título y subtítulo) */
+    header h1 {
+        font-size: 16px;
+    }
+
+    .subtitle-section h2 {
+        font-size: 10px;
+        font-weight: 400 bold;
+    }
+
+    /* BUSCADOR Y FILTROS */
+    .searcher-content {
+        gap: var(--espaciado-xs);
+        padding: 2px;
+        align-items: center;
+        text-align: center;
+    }
+
+    #btn-company {
         font-size: 7px;
         padding: 2px 4px;
+        flex-shrink: 0;
     }
 
     #btn-category {
         font-size: 7px;
         padding: 2px 4px;
+        flex-shrink: 0;
     }
 
     #search-form {
         padding: 2px 3px;
+        flex-basis: 100%;
     }
 
-    .sr-only {
+    .search-divider {
         font-size: 7px;
     }
 
