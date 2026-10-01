@@ -1,0 +1,181 @@
+{
+    "empresas": [
+        {
+            "id": 1, 
+            "nombre": "GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.", 
+            "rubro": "Construcción, Arquitectura y Obra Civil",
+            "municipio": "Zapopan",
+            "contacto": {
+                "emails": [
+                    "vazquez.rebeca1@gmail.com", 
+                    "mrayo@gcrobras.com"
+                ],
+                "telefono": null
+                },
+            "estatus": "Acreditada",
+            "fecha_acreditacion": "2026-09-17",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 2, 
+            "nombre": "Distribuidora Electrónica del Pacífico, S.A. de C.V.", 
+            "rubro": "Tecnología, Software y Telecomunicaciones",
+            "municipio": "Guadalajara",
+            "contacto": {
+                "emails": [
+                    "contacto@depsa.mx"
+                ],
+                "telefono": null
+                },
+            "estatus": "Acreditada",
+            "fecha_acreditacion": "2026-04-02",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 3, 
+            "nombre": "Hospital Integral Santa Fe", 
+            "rubro": "Salud, Hospitales y Servicios Médicos",
+            "municipio": null,
+            "contacto": {
+                "emails": [
+                    "administracion@hospitalsantafe.com", 
+                    "direccion@hospitalsantafe.com"
+                ],
+                "telefono": "3334567890"
+                },
+            "estatus": "Acreditada",
+            "fecha_acreditacion": "2026-01-15",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 4, 
+            "nombre": "Transportes y Logística Cuauhtémoc", 
+            "rubro": "Transporte, Logística y Almacenamiento",
+            "municipio": "Tlaquepaque",
+            "contacto": {
+                "emails": [
+                    "operaciones@logisticacuauhtemoc.mx"
+                ],
+                "telefono": "3322114455"
+                },
+            "estatus": "En Proceso",
+            "fecha_acreditacion": "2025-09-22",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 5, 
+            "nombre": "Ferretera y Materiales del Bajío", 
+            "rubro": "Proveedores de la Construcción, Ferretería y Materiales",
+            "municipio": "El Salto",
+            "contacto": {
+                "emails": [
+                    "ventas@ferreterabajio.com", 
+                    "cobranza@ferreterabajio.com",
+                    "gerencia@ferreterabajio.com"
+                ],
+                "telefono": null
+                },
+            "estatus": "Desacreditada",
+            "fecha_acreditacion": "2024-11-05",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 6, 
+            "nombre": "Despacho Legal Orozco y Asociados", 
+            "rubro": "Servicios Jurídicos, Fiscales y Consultoría Empresarial",
+            "municipio": null,
+            "contacto": {
+                "emails": [
+                    "contacto@orozcoasociados.mx"
+                ],
+                "telefono": null
+                },
+            "estatus": "Acreditada",
+            "fecha_acreditacion": "2026-06-10",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 7, 
+            "nombre": "Agroindustrias del Valle de Ameca", 
+            "rubro": "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)",
+            "municipio": "Ameca",
+            "contacto": {
+                "emails": [
+                    "calidad@agrovalle.com", 
+                    "ventas@agrovalle.com"
+                ],
+                "telefono": null
+                },
+            "estatus": "En Proceso",
+            "fecha_acreditacion": "2025-09-05",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 8, 
+            "nombre": "Seguridad y Resguardo Jalisco", 
+            "rubro": "Seguridad Privada y Gestión de Riesgos",
+            "municipio": null,
+            "contacto": {
+                "emails": [
+                    "informes@seguridadjalisco.mx"
+                ],
+                "telefono": "33-4567-8912"
+                },
+            "estatus": "Desacreditada",
+            "fecha_acreditacion": "2024-08-30",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 9, 
+            "nombre": "Textiles y Confecciones Río Verde", 
+            "rubro": "Textil, Confección, Calzado y Uniformes",
+            "municipio": "Tonalá",
+            "contacto": {
+                "emails": [
+                    "pedidos@textilesrioverde.com", 
+                    "exportacion@textilesrioverde.com",
+                    "direccion@textilesrioverde.com"
+                ],
+                "telefono": "33-9988-7766"
+                },
+            "estatus": "Acreditada",
+            "fecha_acreditacion": "2026-02-20",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        },
+        {
+            "id": 10, 
+            "nombre": "Inmobiliaria y Administración Los Robles", 
+            "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+            "municipio": "Zapopan",
+            "contacto": {
+                "emails": [
+                    "atencion@losrobles.mx"
+                ],
+                "telefono": "33-1122-3344"
+                },
+            "estatus": "Acreditada",
+            "fecha_acreditacion": "2026-07-01",
+            "fecha_renovacion": null,
+            "fecha_vigencia": null,
+            "fecha_cambio_estatus": null
+        }
+    ]
+}
