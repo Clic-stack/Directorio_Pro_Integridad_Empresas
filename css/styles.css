@@ -365,6 +365,7 @@ header h1 {
 #login-form,
 #loading-screen,
 #admin-screen,
+#contact-menu,
 #form-register,
 #form-edit,
 #form-delete {
@@ -382,7 +383,8 @@ header h1 {
 .form-register-content,
 .form-edit-content,
 .form-delete-content,
-#admin-screen > * ,
+.contact-menu-content,
+.admin-screen-content,
 .spinner {
     background-color: var(--color-fondo-tarjeta);
     border-radius: var(--radio-tarjeta);
@@ -391,6 +393,80 @@ header h1 {
     width: 100%;
     max-height: 85vh;
     overflow-y: auto;
+}
+
+/* MENÚ DE CONTACTO */
+#contact-menu-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-texto-principal);
+    margin-bottom: var(--espaciado-md);
+}
+ 
+#contact-menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-xs);
+    margin-bottom: var(--espaciado-md);
+}
+ 
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-sm);
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-boton);
+    font-size: 13px;
+    color: var(--color-texto-principal);
+    text-decoration: none;
+}
+ 
+.contact-option:hover {
+    background-color: var(--color-fondo-pagina);
+    border-color: var(--color-azul);
+}
+ 
+#btn-close-contact-menu {
+    width: 100%;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-boton);
+    padding: 9px;
+    font-size: 13px;
+    color: var(--color-texto-secundario);
+}
+ 
+#btn-close-contact-menu:hover {
+    background-color: var(--color-fondo-pagina);
+}
+
+/* PANEL DE ADMINISTRACIÓN */
+.admin-screen-content p {
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+    margin-bottom: var(--espaciado-sm);
+}
+ 
+.admin-screen-content p:first-child {
+    color: var(--color-texto-principal);
+    font-weight: 600;
+    margin-bottom: var(--espaciado-xs);
+}
+ 
+.admin-screen-content button {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-boton);
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+    margin-top: var(--espaciado-sm);
+}
+ 
+.admin-screen-content button:hover {
+    background-color: var(--color-fondo-pagina);
+    border-color: var(--color-azul);
 }
 
 /* Los formularios reales, dentro de sus contenedores */

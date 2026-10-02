@@ -44,11 +44,22 @@
         </div>
     
         <div id="admin-screen" class="admin-screen" hidden>
-            <p>Bienvenid@, <span id="admin-username">{{ username }}</span> al Directorio Pro Integridad Empresas</p>
-            <p>¿Qué te gustaría hacer el día de hoy?</p>
-            <button type="button" id="btn-register">Registrar Nueva Empresa</button>
-            <button type="button" id="btn-edit">Editar Empresa</button>
-            <button type="button" id="btn-delete">Eliminar Empresa</button>
+            <div class="admin-screen-content">
+                <p>Bienvenid@, <span id="admin-username">{{ username }}</span> al Directorio Pro Integridad Empresas</p>
+                <p>¿Qué te gustaría hacer el día de hoy?</p>
+                <button type="button" id="btn-register">Registrar Nueva Empresa</button>
+                <button type="button" id="btn-edit">Editar Empresa</button>
+                <button type="button" id="btn-delete">Eliminar Empresa</button>
+            </div>
+        </div>
+
+        <!-- ===================== MENÚ DE CONTACTO (reutilizable) ===================== -->
+        <div id="contact-menu" class="contact-menu" hidden>
+            <div class="contact-menu-content">
+                <p id="contact-menu-title"></p>
+                <div id="contact-menu-options"></div>
+                <button type="button" id="btn-close-contact-menu">Cerrar</button>
+            </div>
         </div>
     
         <!-- ===================== FORMULARIO DE REGISTRO ===================== -->
@@ -317,12 +328,6 @@
                         <button type="button" data-category="Servicios Generales y Especializados">Servicios Generales y Especializados</button>
                     </li>
                 </ul>
-                <!--<form id="search-form" method="GET">
-                    <label for="search-input" class="sr-only"> | &nbsp; 🔎</label>
-                    <input type="text" id="search-input" placeholder="Buscar empresa por nombre, municipio o rubro...">
-                    <ul id="search-suggestions"></ul>
-                    <p id="error-message" class="error-message" hidden>No se encontraron empresas que coincidan con tu búsqueda</p>
-                </form> -->
                 <form id="search-form" method="GET">
                     <label for="search-input" class="sr-only">Buscar empresa por nombre, municipio o rubro</label>
                     <span class="search-divider" aria-hidden="true">| 🔎</span>
@@ -346,105 +351,13 @@
                 <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
                 <button type="button" class="btn-contact">✉️ Contactar</button>
             </div>
-
-            <div data-id="2" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
-
-            <div data-id="3" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
-
-            <div data-id="4" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
-
-            <div data-id="5" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
-
-            <div data-id="6" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
-
-            <div data-id="7" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
-
-            <div data-id="8" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
-
-            <div data-id="9" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
-                <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
-                    <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
-                </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
-            </div>
         </div>
     
         <!-- ===================== Paginación ===================== -->
     
         <div id="pagination">
             <button type="button" id="btn-previous-page"> ← </button>
-            <button type="button" data-page="1" class="active-page">1</button>
-            <button type="button" data-page="2">2</button>
-            <button type="button" data-page="3">3</button>
-            <span class="ellipses">···</span>
-            <button type="button" data-page="30">30</button>
+            <div id="page-numbers"></div>
             <button type="button" id="btn-next-page"> → </button>
         </div>
     </div>
