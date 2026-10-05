@@ -4,6 +4,7 @@
       "id": "1",
       "nombre": "GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.",
       "rubro": "Construcción, Arquitectura y Obra Civil",
+      "logo": "src/logo/grupo_constructor.png",
       "municipio": "Zapopan",
       "contacto": {
         "emails": [
@@ -22,6 +23,7 @@
       "id": "2",
       "nombre": "Distribuidora Electrónica del Pacífico, S.A. de C.V.",
       "rubro": "Tecnología, Software y Telecomunicaciones",
+      "logo": "",
       "municipio": "Guadalajara",
       "contacto": {
         "emails": [
@@ -39,6 +41,7 @@
       "id": "3",
       "nombre": "Hospital Integral Santa Fe",
       "rubro": "Salud, Hospitales y Servicios Médicos",
+      "logo": "",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -57,6 +60,7 @@
       "id": "4",
       "nombre": "Transportes y Logística Cuauhtémoc",
       "rubro": "Transporte, Logística y Almacenamiento",
+      "logo": "",
       "municipio": "Tlaquepaque",
       "contacto": {
         "emails": [
@@ -74,6 +78,7 @@
       "id": "5",
       "nombre": "Ferretera y Materiales del Bajío",
       "rubro": "Proveedores de la Construcción, Ferretería y Materiales",
+      "logo": "",
       "municipio": "El Salto",
       "contacto": {
         "emails": [
@@ -93,6 +98,7 @@
       "id": "6",
       "nombre": "Despacho Legal Orozco y Asociados",
       "rubro": "Servicios Jurídicos, Fiscales y Consultoría Empresarial",
+      "logo": "",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -110,6 +116,7 @@
       "id": "7",
       "nombre": "Agroindustrias del Valle de Ameca",
       "rubro": "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)",
+      "logo": "",
       "municipio": "Ameca",
       "contacto": {
         "emails": [
@@ -128,6 +135,7 @@
       "id": "8",
       "nombre": "Seguridad y Resguardo Jalisco",
       "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "logo": "",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -145,6 +153,7 @@
       "id": "9",
       "nombre": "Textiles y Confecciones Río Verde",
       "rubro": "Textil, Confección, Calzado y Uniformes",
+      "logo": "",
       "municipio": "Tonalá",
       "contacto": {
         "emails": [
@@ -164,6 +173,7 @@
       "id": "10",
       "nombre": "Inmobiliaria y Administración Los Robles",
       "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "logo": "",
       "municipio": "Zapopan",
       "contacto": {
         "emails": [
@@ -180,6 +190,7 @@
     {
       "nombre": "Gomitas S.A. de C.V.",
       "rubro": "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)",
+      "logo": "",
       "municipio": "El Salto",
       "contacto": {
         "emails": [
@@ -199,6 +210,7 @@
     {
       "nombre": "Diseño de Interiores MALCO",
       "rubro": "Construcción, Arquitectura y Obra Civil",
+      "logo": "",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -217,6 +229,7 @@
       "id": "13",
       "nombre": "La Gallina Feliz",
       "rubro": "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)",
+      "logo": "",
       "municipio": "Tlaquepaque",
       "contacto": {
         "emails": [
@@ -234,6 +247,7 @@
       "id": "14",
       "nombre": "Soluciones Tecnologicas de Mexico",
       "rubro": "Tecnología, Software y Telecomunicaciones",
+      "logo": "",
       "municipio": "Guadalajara",
       "contacto": {
         "emails": [
