@@ -93,13 +93,14 @@ getCompany();
 function renderCard(companies) {
     const cardsHTML = companies.map(company => {
         const icon = iconsByCategory[company.rubro] || "🏢";
+        const iconClass = company.logo ? "icon-card has-logo" : "icon-card";
         const iconContent = company.logo
             ? `<img src="${company.logo}" alt="" class="icon-card-img">`
             : icon;
         const status = getEffectiveStatus(company);
         return `<div class="company-card" data-id="${company.id}" data-category="${company.rubro}" data-status="${status}">
         <div class="top-card">
-        <span class="icon-card">${iconContent}</span>
+        <span class="${iconClass}">${iconContent}</span>
         <span class="badge">${status}</span>
         <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
         </div>

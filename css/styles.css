@@ -291,6 +291,16 @@ header h1 {
   border-radius: inherit;
 }
 
+.icon-card.has-logo {
+  width: 80px;
+  background-color: #fff;
+  border: 1px solid var(--color-borde);
+}
+
+.icon-card.has-logo .icon-card-img {
+  padding: 2px;
+}
+
 .badge {
     background-color: var(--color-verde-fondo);
     color: var(--color-verde-texto);

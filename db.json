@@ -41,7 +41,7 @@
       "id": "3",
       "nombre": "Hospital Integral Santa Fe",
       "rubro": "Salud, Hospitales y Servicios Médicos",
-      "logo": "",
+      "logo": "src/logo/hospital_santa_fe.png",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -116,7 +116,7 @@
       "id": "7",
       "nombre": "Agroindustrias del Valle de Ameca",
       "rubro": "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)",
-      "logo": "",
+      "logo": "src/logo/agroindustrias_del_valle.png",
       "municipio": "Ameca",
       "contacto": {
         "emails": [
@@ -173,7 +173,7 @@
       "id": "10",
       "nombre": "Inmobiliaria y Administración Los Robles",
       "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
-      "logo": "",
+      "logo": "src/logo/inmobiliaria_los_robles.png",
       "municipio": "Zapopan",
       "contacto": {
         "emails": [
