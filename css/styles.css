@@ -251,6 +251,7 @@ header h1 {
 .top-card {
     display: grid;
     grid-template-columns: auto 1fr;
+    align-items: start;
     gap: var(--espaciado-xs);
     margin-bottom: var(--espaciado-sm);
 }
@@ -293,6 +294,7 @@ header h1 {
 
 .icon-card.has-logo {
   width: 80px;
+  height:80px;
   background-color: #fff;
   border: none;
 }
