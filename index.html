@@ -50,6 +50,7 @@
             <div class="admin-screen-content">
                 <p>Bienvenid@, <span id="admin-username">{{ username }}</span> al Directorio Pro Integridad Empresas</p>
                 <p>¿Qué te gustaría hacer el día de hoy?</p>
+                <p id="admin-message" class="admin-message" hidden></p>
                 <button type="button" id="btn-register">Registrar Nueva Empresa</button>
                 <button type="button" id="btn-edit">Editar Empresa</button>
                 <button type="button" id="btn-delete">Eliminar Empresa</button>
@@ -109,6 +110,9 @@
     
                     <label for="company-email-3">Email adicional (opcional)</label>
                     <input type="email" id="company-email-3" name="company-email-3">
+
+                    <label for="company-email-4">Email adicional (opcional)</label>
+                    <input type="email" id="company-email-4" name="company-email-4">
     
                     <label for="company-phone">Teléfono (opcional)</label>
                     <input type="text" id="company-phone" name="company-phone">
@@ -116,15 +120,10 @@
                     <label for="company-accreditation-day">Fecha de acreditación</label>
                     <input type="date" id="company-accreditation-day" name="company-accreditation-day" required>
     
+                    <p id="error-message-register" class="error-message" hidden></p>
                     <button type="submit">Registrar Empresa</button>
                     <button type="button" id="btn-cancel-register">Cancelar</button>
                 </form>
-    
-                <!-- ===================== VISTA PREVIA DE LA TARJETA DE REGISTRO ===================== -->
-    
-                <div id="preview-register-card">
-    
-                </div>
             </div>
         </div>
     
@@ -206,6 +205,9 @@
     
                         <label for="edit-company-email-3">Email adicional (opcional)</label>
                         <input type="email" id="edit-company-email-3" name="edit-company-email-3">
+
+                        <label for="edit-company-email-4">Email adicional (opcional)</label>
+                        <input type="email" id="edit-company-email-4" name="edit-company-email-4">
     
                         <label for="edit-company-phone">Teléfono (opcional)</label>
                         <input type="text" id="edit-company-phone" name="edit-company-phone">
@@ -215,13 +217,7 @@
     
                         <button type="submit">Guardar cambios</button>
                         <button type="button" id="btn-cancel-edit">Cancelar</button>
-                    </form>
-    
-                    <!-- ===================== VISTA PREVIA DE LA TARJETA EDITAR ===================== -->
-    
-                    <div id="preview-edit-card">
-    
-                    </div>      
+                    </form> 
                 </div>
             </div>
         </div>
@@ -351,13 +347,13 @@
         <div id="company-container">
             <div data-id="1" data-category="Construcción, Arquitectura y Obra Civil" data-status="Acreditada" class="company-card">
                 <div class="top-card">
-                    <span class="icon-card">🏗️</span>
-                    <span class="badge">Acreditada</span>
+                    <span class="icon-card"></span>
+                    <span class="badge"></span>
                     <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
                 </div>
-                <p class="name-card">GRUPO CONSTRUCTOR DE LA REGIÓN,S.A. DE C.V.</p>
-                <p class="detail-card">Construcción, Arquitectura y Obra Civil · Zapopan</p>
-                <button type="button" class="btn-contact">✉️ Contactar</button>
+                <p class="name-card"></p>
+                <p class="detail-card"></p>
+                <button type="button" class="btn-contact"></button>
             </div>
         </div>
     

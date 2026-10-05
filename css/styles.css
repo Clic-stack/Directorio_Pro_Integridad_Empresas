@@ -11,6 +11,8 @@
     --color-fondo-pagina: #f4f1ec;
     --color-fondo-tarjeta: #ffffff;
     --color-icono-fondo: #dbeafe;
+    --color-rojo-fondo: #fee2e2;
+    --color-rojo-texto: #b91c1c;
     
     /* Radios */
     --radio-tarjeta: 16px;
@@ -289,6 +291,11 @@ header h1 {
     border-radius: var(--radio-pildora);
 }
 
+.badge.badge-expired {
+  background-color: var(--color-rojo-fondo);
+  color: var(--color-rojo-texto);
+}
+
 .logo-card {
     height: 28px;
     margin-top: var(--espaciado-xs);
@@ -359,6 +366,14 @@ header h1 {
 .ellipses {
     color: var(--color-texto-muted);
     padding: 0 var(--espaciado-xs);
+}
+
+.admin-screen-content .admin-message {
+  color: var(--color-verde-texto);
+  background-color: var(--color-verde-fondo);
+  border-radius: var(--radio-boton);
+  padding: 8px 10px;
+  font-size: 13px;
 }
 
 /* MODALES Y OTROS A PANTALLA COMPLETA (login, carga, panel admin, formularios). Todos comparten el mismo patrón: overlay fijo, centrado, con una "cajita" blanca adentro. */

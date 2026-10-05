@@ -27,15 +27,52 @@ const iconsByCategory = {
     "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)": "🌾",
 }
 
-// SOLICITUD DE DATOS A LA API CON JSON SERVER PARA OBTENER LA LISTA DE EMPRESAS
+function getToday() {
+    return new Date().toLocaleDateString("sv-SE");
+}
+
+function getVigencyDate(company) {
+    if (company.fecha_vigencia) return company.fecha_vigencia;
+    const [year, month, day] = company.fecha_acreditacion.split("-");
+    return `${Number(year) + 1}-${month}-${day}`;
+}
+
+function getEffectiveStatus(company) {
+    if (company.estatus === "En Proceso") return "En Proceso";
+    return getVigencyDate(company) < getToday() ? "Desacreditada" : "Acreditada";
+}
+
+async function syncStatuses(companies) {
+    const outdated = companies.filter(company => company.estatus !== getEffectiveStatus(company));
+
+    for (const company of outdated) {
+        const newStatus = getEffectiveStatus(company);
+        const changes = {
+            estatus: newStatus,
+            fecha_vigencia: getVigencyDate(company),
+            // Al vencer, el cambio de estatus se fecha el día de la vigencia
+            fecha_cambio_estatus: newStatus === "Desacreditada" ? getVigencyDate(company) : getToday()
+        };
+
+        const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas/${company.id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(changes)
+        });
+
+        if (response.ok) Object.assign(company, changes);
+    }
+}
+
+// SOLICITUD DE DATOS A LA API DE JSON SERVER CON RENDER PARA OBTENER LA LISTA DE EMPRESAS
 async function getCompany() {
-    const response = await fetch('http://localhost:3000/empresas');
+    const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas`);
     const companies = await response.json();
     console.log(companies);
 
     allCompaniesRaw = companies;
 
-    const companiesAccredited = companies.filter(company => company.estatus !== "Desacreditada");
+    const companiesAccredited = companies.filter(company => getEffectiveStatus(company) !== "Desacreditada");
 
     allCompanies = companiesAccredited;
     filteredCompanies = allCompanies;
@@ -47,6 +84,7 @@ async function getCompany() {
     const totalTypes = document.querySelectorAll("#company-category option[value]:not([value=''])").length;
     document.getElementById("subtitle-category-count").textContent = totalTypes;
     document.getElementById("category-company-count").textContent = totalTypes;
+    syncStatuses(companies).catch(console.error);
     
 };
 
@@ -55,10 +93,11 @@ getCompany();
 function renderCard(companies) {
     const cardsHTML = companies.map(company => {
         const icon = iconsByCategory[company.rubro] || "🏢";
-        return `<div class="company-card" data-id="${company.id}" data-category="${company.rubro}" data-status="${company.estatus}">
+        const status = getEffectiveStatus(company);
+        return `<div class="company-card" data-id="${company.id}" data-category="${company.rubro}" data-status="${status}">
         <div class="top-card">
         <span class="icon-card">${icon}</span>
-        <span class="badge">${company.estatus}</span>
+        <span class="badge">${status}</span>
         <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
         </div>
         <p class="name-card">${company.nombre}</p>
@@ -202,17 +241,15 @@ document.getElementById("login-form-element").addEventListener("submit", async (
  
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
+    document.getElementById("login-form-element").reset();
     const errorMessageLogin = document.getElementById("error-message-login");
  
     errorMessageLogin.hidden = true;
     document.getElementById("login-form").hidden = true;
     document.getElementById("loading-screen").hidden = false;
  
-    // Esta validación sigue siendo solo para el prototipo: las
-    // credenciales viajan visibles en el código del navegador, así
-    // que NO es segura para producción. Un backend real validaría
-    // esto del lado del servidor, nunca comparando aquí.
-    const response = await fetch("http://localhost:3000/usuarios");
+    // Validación implementada solo para prototipo, requiere de un backend real para producción (seguridad real nula hasta que se trabaje con backend real).
+    const response = await fetch("https://directorio-pro-integridad-empresas.onrender.com/usuarios");
     const usuarios = await response.json();
  
     const usuarioValido = usuarios.find(
@@ -236,6 +273,7 @@ document.getElementById("login-form-element").addEventListener("submit", async (
 document.getElementById("btn-register").addEventListener("click", () => {
     document.getElementById("admin-screen").hidden = true;
     document.getElementById("form-register").hidden = false;
+    document.getElementById("error-message-register").hidden = true;
 });
 
 document.getElementById("btn-logout").addEventListener("click", () => {
@@ -271,6 +309,18 @@ document.getElementById("form-register-element").addEventListener("submit", asyn
     const telefono = telefonoValue ? telefonoValue : null;
  
     const fechaAcreditacion = document.getElementById("company-accreditation-day").value;
+    const errorMessageRegister = document.getElementById("error-message-register");
+    errorMessageRegister.hidden = true;
+
+    const duplicate = allCompaniesRaw.find(
+        company => normalizeName(company.nombre) === normalizeName(nombre)
+    );
+
+    if (duplicate) {
+        errorMessageRegister.textContent = `Ya existe una empresa con ese nombre (ID: ${duplicate.id}, estatus: ${getEffectiveStatus(duplicate)}).`;
+        errorMessageRegister.hidden = false;
+        return;
+    }
  
     // Calculo de fecha_vigencia: un año después de la fecha de acreditación. Lo que permite que el directorio siempre se mantenga actualizado
     const vigencyDate = new Date(fechaAcreditacion);
@@ -296,22 +346,43 @@ document.getElementById("form-register-element").addEventListener("submit", asyn
         fecha_cambio_estatus: null
     };
  
-    const response = await fetch("http://localhost:3000/empresas", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newCompany)
-    });
+    const submitButton = event.submitter;
+    submitButton.disabled = true;
+
+    let response;
+    try {
+        response = await fetch("https://directorio-pro-integridad-empresas.onrender.com/empresas", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newCompany)
+        });
+    } finally {
+        submitButton.disabled = false;
+    }
  
     if (response.ok) {
         document.getElementById("form-register-element").reset();
         document.getElementById("form-register").hidden = true;
+        document.getElementById("admin-screen").hidden = false;
+        if (getEffectiveStatus(newCompany) === "Desacreditada") {
+            showAdminMessage("Empresa registrada, pero su vigencia ya venció: no aparecerá en el directorio.");
+        } else {
+            showAdminMessage("Empresa registrada correctamente.");
+        }
         await getCompany();
     } else {
         alert("Hubo un problema al registrar la empresa. Intenta de nuevo.");
     }
 });
+
+// Ignora mayúsculas, acentos, espacios y signos de puntuación
+function normalizeName(name) {
+    return name
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]/g, "");
+}
 
 document.getElementById("btn-cancel-register").addEventListener("click", () => {
     document.getElementById("form-register-element").reset();
@@ -341,10 +412,15 @@ function runEditSearch() {
     const term = document.getElementById("search-edit-input").value.trim();
     const errorMessage = document.getElementById("error-message-edit");
  
-    let company;
-    if (!isNaN(Number(term)) && term !== "") {
-        company = allCompaniesRaw.find(c => String(c.id) === term);
-    } else {
+    if (term === "") {
+        errorMessage.hidden = false;
+        return;
+    }
+
+    // Primero busca por ID exacto (sirve para numéricos y alfanuméricos);
+    // si no hay coincidencia, busca por nombre
+    let company = allCompaniesRaw.find(c => String(c.id) === term);
+    if (!company) {
         const termLower = term.toLowerCase();
         company = allCompaniesRaw.find(c => c.nombre.toLowerCase().includes(termLower));
     }
@@ -360,7 +436,7 @@ function runEditSearch() {
     // Llena la tarjeta de resumen (solo lectura)
     const icon = iconsByCategory[company.rubro] || "🏢";
     document.getElementById("edit-summary-icon").textContent = icon;
-    document.getElementById("edit-summary-status").textContent = company.estatus;
+    setStatusBadge(document.getElementById("edit-summary-status"), getEffectiveStatus(company));
     document.getElementById("edit-summary-name").textContent = company.nombre;
     document.getElementById("edit-summary-municipality").textContent =
         company.rubro + (company.municipio ? " · " + company.municipio : "");
@@ -382,6 +458,11 @@ function runEditSearch() {
     document.getElementById("edit-company-email-3").value = company.contacto.emails[2] || "";
     document.getElementById("edit-company-phone").value = company.contacto.telefono || "";
     document.getElementById("edit-company-accreditation-day").value = company.fecha_acreditacion;
+
+    function setStatusBadge(element, status) {
+        element.textContent = status;
+        element.classList.toggle("badge-expired", status === "Desacreditada");
+    }
  
     document.getElementById("search-edit-company").hidden = true;
     document.getElementById("edit-company-form").hidden = false;
@@ -415,8 +496,6 @@ document.getElementById("edit-company-form-element").addEventListener("submit", 
     const fechaAcreditacion = document.getElementById("edit-company-accreditation-day").value;
  
     // Recalculamos fecha_vigencia por si la fecha de acreditación cambió.
-    // estatus, fecha_renovacion y fecha_cambio_estatus NO se tocan aquí,
-    // se conservan tal cual venían — no son campos editables en este formulario.
     const vigencyDate = new Date(fechaAcreditacion);
     vigencyDate.setFullYear(vigencyDate.getFullYear() + 1);
     const vigencyDateText = vigencyDate.toISOString().split("T")[0];
@@ -437,7 +516,7 @@ document.getElementById("edit-company-form-element").addEventListener("submit", 
         fecha_cambio_estatus: companyBeingEdited.fecha_cambio_estatus
     };
  
-    const response = await fetch(`http://localhost:3000/empresas/${id}`, {
+    const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -448,6 +527,8 @@ document.getElementById("edit-company-form-element").addEventListener("submit", 
     if (response.ok) {
         document.getElementById("form-edit").hidden = true;
         companyBeingEdited = null;
+        document.getElementById("admin-screen").hidden = false;
+        showAdminMessage("Cambios guardados correctamente.");
         await getCompany();
     } else {
         alert("Hubo un problema al guardar los cambios. Intenta de nuevo.");
@@ -490,12 +571,17 @@ function runDeleteSearch() {
  
     const icon = iconsByCategory[company.rubro] || "🏢";
     document.getElementById("delete-summary-icon").textContent = icon;
-    document.getElementById("delete-summary-status").textContent = company.estatus;
+    setStatusBadge(document.getElementById("delete-summary-status"), getEffectiveStatus(company));
     document.getElementById("delete-summary-name").textContent = company.nombre;
     document.getElementById("delete-summary-municipality").textContent =
         company.rubro + (company.municipio ? " · " + company.municipio : "");
  
     document.getElementById("delete-company-id").value = company.id;
+
+    function setStatusBadge(element, status) {
+        element.textContent = status;
+        element.classList.toggle("badge-expired", status === "Desacreditada");
+    }
  
     document.getElementById("search-delete-company").hidden = true;
     document.getElementById("delete-company-form").hidden = false;
@@ -513,12 +599,14 @@ document.getElementById("delete-company-form-element").addEventListener("submit"
  
     const id = document.getElementById("delete-company-id").value;
  
-    const response = await fetch(`http://localhost:3000/empresas/${id}`, {
+    const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas/${id}`, {
         method: "DELETE"
     });
  
     if (response.ok) {
         document.getElementById("form-delete").hidden = true;
+        document.getElementById("admin-screen").hidden = false;
+        showAdminMessage("Empresa eliminada correctamente.");
         await getCompany();
     } else {
         alert("Hubo un problema al eliminar la empresa. Intenta de nuevo.");
@@ -529,3 +617,10 @@ document.getElementById("btn-cancel-delete").addEventListener("click", () => {
     document.getElementById("form-delete").hidden = true;
     document.getElementById("admin-screen").hidden = false;
 });
+
+function showAdminMessage(text) {
+    const message = document.getElementById("admin-message");
+    message.textContent = text;
+    message.hidden = false;
+    setTimeout(() => { message.hidden = true; }, 4000);
+}
