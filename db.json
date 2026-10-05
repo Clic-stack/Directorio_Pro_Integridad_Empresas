@@ -23,7 +23,7 @@
       "id": "2",
       "nombre": "Distribuidora Electrónica del Pacífico, S.A. de C.V.",
       "rubro": "Tecnología, Software y Telecomunicaciones",
-      "logo": "",
+      "logo": "src/logo/distribuidora_del_pacifico.png",
       "municipio": "Guadalajara",
       "contacto": {
         "emails": [
@@ -60,7 +60,7 @@
       "id": "4",
       "nombre": "Transportes y Logística Cuauhtémoc",
       "rubro": "Transporte, Logística y Almacenamiento",
-      "logo": "",
+      "logo": "src/logo/transportes_cuauhtemoc.png",
       "municipio": "Tlaquepaque",
       "contacto": {
         "emails": [
@@ -78,7 +78,7 @@
       "id": "5",
       "nombre": "Ferretera y Materiales del Bajío",
       "rubro": "Proveedores de la Construcción, Ferretería y Materiales",
-      "logo": "",
+      "logo": "src/logo/ferre-materiales_bajio.png",
       "municipio": "El Salto",
       "contacto": {
         "emails": [
@@ -98,7 +98,7 @@
       "id": "6",
       "nombre": "Despacho Legal Orozco y Asociados",
       "rubro": "Servicios Jurídicos, Fiscales y Consultoría Empresarial",
-      "logo": "",
+      "logo": "src/logo/despacho_juridico_orozco.png",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -135,7 +135,7 @@
       "id": "8",
       "nombre": "Seguridad y Resguardo Jalisco",
       "rubro": "Seguridad Privada y Gestión de Riesgos",
-      "logo": "",
+      "logo": "src/logo/empresa_seguridad_jalisco.png",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -153,7 +153,7 @@
       "id": "9",
       "nombre": "Textiles y Confecciones Río Verde",
       "rubro": "Textil, Confección, Calzado y Uniformes",
-      "logo": "",
+      "logo": "src/logo/empresa_textiles.png",
       "municipio": "Tonalá",
       "contacto": {
         "emails": [
@@ -190,7 +190,7 @@
     {
       "nombre": "Gomitas S.A. de C.V.",
       "rubro": "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)",
-      "logo": "",
+      "logo": "src/logo/gomitas.png",
       "municipio": "El Salto",
       "contacto": {
         "emails": [
@@ -210,7 +210,7 @@
     {
       "nombre": "Diseño de Interiores MALCO",
       "rubro": "Construcción, Arquitectura y Obra Civil",
-      "logo": "",
+      "logo": "src/logo/malco.png",
       "municipio": null,
       "contacto": {
         "emails": [
@@ -229,7 +229,7 @@
       "id": "13",
       "nombre": "La Gallina Feliz",
       "rubro": "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)",
-      "logo": "",
+      "logo": "src/logo/gallina_feliz.png",
       "municipio": "Tlaquepaque",
       "contacto": {
         "emails": [
@@ -247,7 +247,7 @@
       "id": "14",
       "nombre": "Soluciones Tecnologicas de Mexico",
       "rubro": "Tecnología, Software y Telecomunicaciones",
-      "logo": "",
+      "logo": "src/logo/soluciones_tecnologicas.png",
       "municipio": "Guadalajara",
       "contacto": {
         "emails": [

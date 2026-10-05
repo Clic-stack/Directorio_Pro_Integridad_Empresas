@@ -294,7 +294,7 @@ header h1 {
 .icon-card.has-logo {
   width: 80px;
   background-color: #fff;
-  border: 1px solid var(--color-borde);
+  border: none;
 }
 
 .icon-card.has-logo .icon-card-img {
