@@ -30,6 +30,7 @@ const iconsByCategory = {
     "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)": "🌾",
 }
 
+
 function getToday() {
     return new Date().toLocaleDateString("sv-SE");
 }
@@ -209,6 +210,11 @@ document.getElementById("search-form").addEventListener("submit", event => {
     } else {
         errorMessage.hidden = true;
     }
+
+    // Limpia el buscador al terminar y cierra el teclado en celulares
+    const searchInput = document.getElementById("search-input");
+    searchInput.value = "";
+    searchInput.blur();
 });
 
 document.getElementById("page-numbers").addEventListener("click", (event) => {
