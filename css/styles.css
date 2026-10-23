@@ -56,40 +56,13 @@ button {
 }
 
 /* CONTENEDOR GENERAL DE LA PÁGINA */
-#page-container {
+ #page-container {
     max-width: 1000px;
     margin: var(--espaciado-lg) auto;
     background-color: var(--color-fondo-tarjeta);
     border: 1px solid var(--color-borde);
     border-radius: 20px;
     padding: var(--espaciado-lg);
-}
-
-/* BARRA SUPERIOR (volver + login) */
-#top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--espaciado-md);
-}
-
-#btn-return-page {
-    font-size: 13px;
-    color: var(--color-texto-secundario);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#btn-return-page:hover {
-    color: var(--color-texto-principal);
-}
-
-.login-button {
-    font-size: 13px;
-    padding: 6px 14px;
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio-boton);
-    background-color: var(--color-fondo-tarjeta);
 }
 
 /* HEADER (título y subtítulo) */
@@ -363,6 +336,11 @@ header h1 {
     align-items: center;
     gap: var(--espaciado-xs);
     padding: var(--espaciado-lg) 0;
+    width: fit-content;
+    margin: 0 auto;
+    padding: var(--espaciado-xs) var(--espaciado-sm);
+    background-color: var(--color-fondo-suave); /* usa el token gris claro que tengas */
+    border-radius: 999px;
 }
 
 #pagination button {
@@ -378,6 +356,16 @@ header h1 {
     color: var(--color-azul-texto);
 }
 
+#pagination button:hover:not(:disabled):not(.active-page) {
+    background-color: var(--color-borde);
+}
+
+#btn-previous-page:disabled,
+#btn-next-page:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
 #btn-previous-page,
 #btn-next-page {
     border: 1px solid var(--color-borde);
@@ -385,8 +373,16 @@ header h1 {
 
 .ellipses {
     color: var(--color-texto-muted);
-    padding: 0 var(--espaciado-xs);
+    padding: 0 2px;
+    user-select: none;
 }
+
+#page-numbers {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-xs);
+}
+
 
 .admin-screen-content .admin-message {
   color: var(--color-verde-texto);
@@ -405,7 +401,7 @@ header h1 {
 #form-edit,
 #form-delete {
     position: fixed;
-    inset: 0; /* atajo equivalente a top:0; right:0; bottom:0; left:0; */
+    inset: 0; 
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
@@ -430,7 +426,7 @@ header h1 {
 }
 
 /* PANTALLA DE CARGA */
-.spinner {
+/* .spinner {
   background-color: var(--color-fondo-tarjeta);
   border-radius: var(--radio-tarjeta);
   padding: var(--espaciado-lg) calc(var(--espaciado-lg) * 1.5);
@@ -461,7 +457,7 @@ header h1 {
 .spinner p {
   font-size: 13px;
   color: var(--color-texto-secundario);
-}
+}*/
 
 /* MENÚ DE CONTACTO */
 #contact-menu-title {
@@ -523,89 +519,6 @@ header h1 {
   color: var(--color-texto-principal);
 }
 
-/* PANEL DE ADMINISTRACIÓN */
-.admin-screen-content p {
-    font-size: 14px;
-    color: var(--color-texto-secundario);
-    margin-bottom: var(--espaciado-sm);
-}
- 
-.admin-screen-content p:first-child {
-    color: var(--color-texto-principal);
-    font-weight: 600;
-    margin-bottom: var(--espaciado-xs);
-}
- 
-.admin-screen-content button {
-    display: block;
-    width: 100%;
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio-boton);
-    padding: 10px;
-    font-size: 13px;
-    text-align: center;
-    margin-top: var(--espaciado-sm);
-}
- 
-.admin-screen-content button:hover {
-    background-color: var(--color-fondo-pagina);
-    border-color: var(--color-azul);
-}
-
-.admin-screen-content .btn-close-modal {
-  display: block;
-  width: fit-content;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: 0;
-  margin-bottom: var(--espaciado-md);
-}
-
-/* Los formularios reales, dentro de sus contenedores */
-#login-form-element,
-#form-register-element,
-#edit-company-form-element,
-#delete-company-form-element,
-#search-edit-form,
-#search-delete-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaciado-sm);
-}
-
-#login-form-element label,
-#form-register-element label,
-#edit-company-form-element label {
-    font-size: 13px;
-    color: var(--color-texto-secundario);
-    margin-top: var(--espaciado-sm);
-}
-
-#login-form-element input,
-#form-register-element input,
-#form-register-element select,
-#edit-company-form-element input,
-#edit-company-form-element select,
-#search-edit-input,
-#search-delete-input {
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio-boton);
-    padding: 8px 10px;
-    font-size: 13px;
-}
-
-#login-form-element button[type="submit"],
-#form-register-element button[type="submit"],
-#edit-company-form-element button[type="submit"],
-#delete-company-form-element button[type="submit"] {
-    background-color: var(--color-azul);
-    color: var(--color-azul-texto);
-    border-radius: var(--radio-boton);
-    padding: 10px;
-    font-size: 14px;
-    margin-top: var(--espaciado-md);
-}
-
 @media (max-width: 710px) {
     #page-container { 
         margin: 0; 
@@ -613,15 +526,6 @@ header h1 {
         border-radius: 0; 
         width: 100%;
         padding: var(--espaciado-md); 
-    }
-
-    /* BARRA SUPERIOR (volver + login) */
-    #btn-return-page {
-        font-size: 10px;
-    }
-
-    .login-button {
-        font-size: 10px;
     }
 
     /* HEADER (título y subtítulo) */
@@ -677,15 +581,6 @@ header h1 {
         border-radius: 0; 
         width: 100%;
         padding: var(--espaciado-md); 
-    }
-
-    /* BARRA SUPERIOR (volver + login) */
-    #btn-return-page {
-        font-size: 8px;
-    }
-
-    .login-button {
-        font-size: 8px;
     }
 
     /* HEADER (título y subtítulo) */
