@@ -9633,16 +9633,2367 @@
       "fecha_renovacion": null,
       "fecha_vigencia": "2027-10-22",
       "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ngS8J73C124",
+      "nombre": "MBA CORPORATIVO EN SEGURIDAD PRIVADA, S.C.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "mbacorporativosegpriv@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "epeOQu5k_Rw",
+      "nombre": "MEGA INTERNACIONAL, S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "megainternational96@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "3pp4lGfXzqE",
+      "nombre": "GRUPO ESPECIALIZADO EN SEGURIDAD PRIVADA DIMAC, S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "gerencia@dimacseguridad.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Xft_cVjLqOg",
+      "nombre": "CENTURION ALTA SEGURIDAD PRIVADA, S.A DE C.V",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "licedith.centurion@outlook.com",
+          "ecg2981@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ODPfGYsJXzY",
+      "nombre": "QUIMERA SEGURIDAD PRIVADA, S. DE R.L. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rafavilla2020@outlook.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "gL7p16LF5m8",
+      "nombre": "LINAJE CORPORATE PRIVATE SECURITY S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "galan240699@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "wlIwlJsMtbo",
+      "nombre": "CSIS GESTIÓN DE RIESGOS, S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rramirez@grupocsis.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Sd2nqW3IkOw",
+      "nombre": "INTELIGENCIA Y TECNOLOGÍA EN SOLUCIONES DE SEGURIDAD PRIVADA, S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "martha.fajardo@irontigers.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "AkxqUw-JGdM",
+      "nombre": "SERVICIOS ESPECIALIZADOS EN SEGURIDAD PRIVADA DE OCCIDENTE, S.A DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "licgmandujano@gmail.com",
+          "jmedina_2424@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "pw3QtLcsvAk",
+      "nombre": "CORPORATIVO EN SEGURIDAD PRIVADA INTEGRAL Y CUSTODIAS GENESIS, S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "procesos@genesisseguridad.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ikp3G7rmzgY",
+      "nombre": "SEGURIDAD ELECTRONICA DE MEXICO SEFMEX S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "andresramirez@tomcat.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "oTTuonDn-ig",
+      "nombre": "INTEGRACIÓN, SOPORTE Y TECNOLOGÍA S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "betsabeg.sanchez@gmail.com",
+          "director@telematicaycontroles.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "y_kMcmGjLWI",
+      "nombre": "CSTE S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "licitaciones@cste.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Ub3bjbAi7DQ",
+      "nombre": "ADVANS ALTA SEGURIDAD PRIVADA S.A. DE C.V.",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "gonzalo.robles@advansgroup.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "hg7K6MLR2dA",
+      "nombre": "SEGMAG SEGURIDAD ESPECIALIZADA EN LOGÍSTICA",
+      "rubro": "Seguridad Privada y Gestión de Riesgos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "dghectorap@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "b-B7vIIdN2c",
+      "nombre": "DUXS BIENES RAICES S.A. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "duxscorp.ij@corporativoduxs.com",
+          "nefta24@hotmail.com",
+          "corporativoduxs@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "lI4M50OgE1I",
+      "nombre": "PAMIRA INMOBILIARIO S.A DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contacto@pamira.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ZW1g4MFefX4",
+      "nombre": "GRUPO INMOBILIARIO CORBAI S.A. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contacto@inmoshop.mx",
+          "inmoshopmex@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "lNZwX4JvXB4",
+      "nombre": "RILO RENT S. DE R.L. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rilorent1@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "rGsl8waM5xU",
+      "nombre": "RRM DESARROLLOS, S.A DE C.V. ",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "sgvicencio@rrmdesarrollos.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "0Tk9Z9TG1Ro",
+      "nombre": "VENTA, RENTA Y AVALÚOS VV ",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "vv.inmobiliaria@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "HrJDwKTMsk8",
+      "nombre": "OTRU ASOCIADOS, S.A DE C.V. ",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "gemaruizinmobiliaria@gmail.com",
+          "gemaruizinmobiliaria@gmail.com",
+          "contacto@ruizinmobiliaria.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "XMrbQQvn33M",
+      "nombre": "DESARROLLOS ROMO, S. DE R.L. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "araceli@desarrollosromo.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "tINW2j4NugY",
+      "nombre": "IRM LEASING, S.A.P.I. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "eduardo.garcia@irmleasing.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "9bJlUpOVit4",
+      "nombre": "TRASCIENDE GRUPO INMOBILIARIO(ADRIANA EUGENIA GUERRERO MARTÍNEZ)",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "ventas@inmotrasciende.com",
+          "guerrero.personal2020@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "W7JsEzskkug",
+      "nombre": "ANNETTE ESPARZA GUTIÉRREZ",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "annette@arqesconsultores.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "nxpVdYEo9t4",
+      "nombre": "GRAND HOMR LUXURY MX(JESÚS EDUARDO GUERRERO GONSOR)",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "eduardo@grandhomeluxury.mx",
+          "grandhome.eduardo@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "W8fyq7gRMQw",
+      "nombre": "DECIMO PISO INMOBILIARIO(MARÍA GUADALUPE GUTIÉRREZ GUTIÉRREZ)",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "lupisgtz74@yahoo.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "kizmzq_u67w",
+      "nombre": "JRA INMOBILIARIA",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "juliette.arreola@gmail.com",
+          "arodrigueza9@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "9WfMn_6g918",
+      "nombre": "JAVIER LAHUD NEVARES",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "Javierlahud@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "J1FsCmnBf1c",
+      "nombre": "GRUPO MERLO VALLIN DESARROLLOS INMOBILIARIOS S.A.P.I. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "llgrupomeva@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "aOQxhw1vkHo",
+      "nombre": "DESARROLLADORA GS BROKERS S.A.P.I. DE C.V",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contacto@gsbrokers.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "t9vy0s88twQ",
+      "nombre": "ARRENDADORA HERSA S.A. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "ahernandez@constructorahersa.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "CpQ7WjKNBhI",
+      "nombre": "KARTENSOLL, S.A.P.I DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "i.ramirez@treestate.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "qswFpolnA1I",
+      "nombre": "COSMOBILIA, S.A.P.I.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "grupocoamobilia@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Prdmtd0fZVQ",
+      "nombre": "Martha Estela Reyes Vizcarra",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "ae.marthareyes@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "lECHNll_Nis",
+      "nombre": "DALILA DEL CARMEN ULLOA VIDAURRI",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "dalila.vidaurri@frecuenciainmuebles.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "mGeW9NxUmTA",
+      "nombre": "TERREPOLIS S.R.L. DE C.V.",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contacto.terrepolis@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "IaY8lgptpVc",
+      "nombre": "JULIO SANTACRUZ GONZALEZ",
+      "rubro": "Servicios Inmobiliarios y Administración de Propiedades",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "juliosantacruz@coleinsa.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "msHxsm3cyp8",
+      "nombre": "EBIOESOL ENERGY S.A.P.I. DE C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "dulcedelatorre1509@gmail.com",
+          "dulce.desde23@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "b6fB9q1Dprs",
+      "nombre": "AGUA Y SANEAMIENTO AMBIENTAL, S.A DE C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rse_asa@plantasdetratamiento.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "PtMzptFSdZ8",
+      "nombre": "MANEJO INTEGRAL DE RESIDUOS, S.A. de C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "antonio_bautista@mir-mexico.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "80gQJXeA8cg",
+      "nombre": "SOLUCIONES INTEGRALES EN BOMBEO INTELIGENTE SIBI, S.A. DE C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "evillanueva@sibi.mx",
+          "epureko@sibi.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "OS4klCVWawQ",
+      "nombre": "ESTUDIOS Y PROYECTOS DE INGENIERÍAAMBIENTAL Y SANITARIA S.A. DE C.V",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "epias.mx@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "6kZ-xxSU7Yc",
+      "nombre": "VMS ENERGY DE MEXICO S. DE R.L. DE C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "gperaza@vmsenergy.com",
+          "jcambron@vmsenergy.com",
+          "gperaza@vmsenergy.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "f3N638f7aTM",
+      "nombre": "COMBUSTIBLES DE COCULA, S.A DE C.V. ",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rbrco@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ozGJys_2wQE",
+      "nombre": "DERECHO Y NATURALEZA, S. C.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "karenblumgartdeltoro@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Ei-2VZqdl1c",
+      "nombre": "AIRE Y EQUIPOS PARA REFRIGERACION, S.A. DE C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "airesyequipos@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "vW_8xMHUDTw",
+      "nombre": "BKT BICI PÚBLICA, S.A. DE C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "coordinacion.calidad@bktbicipublica.com",
+          "andrea.zavaleta@bktbicipublica.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "7olG0aHvMXI",
+      "nombre": "CENTRO MARIO MOLINA PARA ESTUDIOS ESTRATEGICOS SOBRE ENERGIA Y MEDIO AMBIENTE A.C.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "mcastellanos@centromariomolina.org"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "n_pgy2yeJf8",
+      "nombre": "MEXITECSA S.A. DE C.V.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "leonardo.damian@mexitecsa.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ThSwb4MNKfU",
+      "nombre": "CIVITA S.C.",
+      "rubro": "Energía, Medio Ambiente y Sustentabilidad",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "admin@civita.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "jvknjuSo2qY",
+      "nombre": "LAZZAR, S.A. DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "recursoshumanos@lazzarmexico.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "dZacxPoxjFU",
+      "nombre": "FREMAN SHOES, S.A.P.I. DE C.V",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "veronica@clickshoes.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "tM0KhCG2Pts",
+      "nombre": "EL ZAPATO AGIL IBARRA GARIBAY PROMOTORES S.A. DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "aparicio@zapatoagil.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "U26kXYC4KWg",
+      "nombre": "TGA UNIFORMES, S.A DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "tgalicitaciones@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "b-5lauiiAwI",
+      "nombre": "UNIFORMES VICVER S.A. DE C.V. ",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "uniformesvicver2021@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "6R7CtGr72Xo",
+      "nombre": "GRE UNIFORMES, S.A. DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "greuniformes@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "lIqVdz9oJlo",
+      "nombre": "BONN PASS S.A. DE C.V. ",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "auditoria@bonnpass.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "LxjhWQ_7o1k",
+      "nombre": "TACTICAL STORE, S.A. DE C.V. ",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "recursoshumanos@tacticalstore.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "NLTBQU6r-a4",
+      "nombre": "TEXTILERA MEXICANA HORDIB, S.A. DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "comprascountier@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ybK880bMdJc",
+      "nombre": "DISTRIBUIDORA DE ALTA MODA DEL PACÍFICO S.A. DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "a1@dibra.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Qg2BL_VVGqQ",
+      "nombre": "CUSTOMGEAR S.A DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "joaquin.moreno@customgear.mx",
+          "alexa.moreno@customgear.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "4vRh2u6Y1hE",
+      "nombre": "GRUPO COMERCIAL INDUSTRIAL FERAN DE OCCIDENTE S.A. DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "ventas@tactimex.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "gmjStXWCxl8",
+      "nombre": "YARENY NOHEMI PIZANO CHÁVEZ ",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "yarepizano@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "sFH8BS63CgI",
+      "nombre": "EDUARDO RAMON DE DIOS BRAMBILA",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "ventas3_uniformesroma@outlook.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "gHhC3-23XkI",
+      "nombre": "GUA TACTICAL S.A. DE C.V.",
+      "rubro": "Textil, Confección, Calzado y Uniformes",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "svazquez@gdltactical.com",
+          "rgonzalezguerra@gdltactical.com",
+          "hcastaneda@gdltactical.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "9-fGjEq1Esg",
+      "nombre": "UNIVERSIDAD AUTONOMA DE GUADALAJARA, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "mfernanda.alvarez@edu.uag.mx",
+          "isabel.rodriguez@edu.uag.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "AXgTMs5Rl88",
+      "nombre": "EL COLEGIO DE JALISCO, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "presidencia@elcolegiodejalisco.edu.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "U5zQ6gE4cMs",
+      "nombre": "CÁMARA NACIONAL DE COMERCIO, SERVICIOS Y TURISMO DE GUADALAJARA CANACO",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "legal@camaradecomerciogdl.mx",
+          "presidencia@camaradecomerciogdl.mx",
+          "representacion@camaradecomerciogdl.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "w4ix5eEgQ_s",
+      "nombre": "FUNDACIÓN SOCIAL DEL EMPRESARIADO JALISCIENSE, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "maria@fejal.org"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "IYm49keWcow",
+      "nombre": "CAMARA MEXICANA DE LA INDUSTRIA DE LA CONSTRUCCIÓN CMIC",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "juridico@cmicjalisco.org.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "2ATiUN5Y6Ps",
+      "nombre": "CONSEJO COORDINADOR DE JÓVENES EMPRESARIOS DE JALISCO, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "ccjej.adquisiciones@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "4jBUml6cCNc",
+      "nombre": "PRO SOCIEDAD HACER BIEN EL BIEN, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "magdalena.rodriguez@prosociedad.org"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "YI6qkOY-NHg",
+      "nombre": "CENTRO IBEROAMERICANO DE FORMACIÓN Y CERTIFICACIÓN, S.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "brenda@ciforce.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "2cna41HgpGg",
+      "nombre": "INSTITUTO IBEROAMERICANO DE PROFESIONALIZACIÓN AVANZADA, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contacto@iibepa.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ymJuWaVKt3U",
+      "nombre": "CENTRO DE APRENDIZAJE Y ACOMPAÑAMIENTO PSICOEDUCATIVO, S.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "centrodeaap@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "vXYRBblc124",
+      "nombre": "INSTITUTO LUXOR DE OCCIDENTE, S.A.S. DE C.V.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "corporativoluxor@gmail.com",
+          "luxor.empresarial@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "5yVGStTIyaM",
+      "nombre": "FUNDACIÓN DIALOGA BAHÍA, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contacto@dialogabahia.org"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "mj7G3sHYEAQ",
+      "nombre": "IMPACTO E INTERVENCIÓN SOCIAL A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "tramites.impactoeintervencion@gmail.com",
+          "contacto@impactoeintervencion.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "C7A81xaCvQ8",
+      "nombre": "Asociación Técnica Mexicana de Flexografía Capitulo FTA México A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "fta.mexico.org@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "UqoWpnX-hek",
+      "nombre": "DÍAZ MORONES Y ASOCIADOS A.C. ",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "christian.barajas@diazmorones.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "b-vYgi3VNhc",
+      "nombre": "CENTROS DE ESTUDIOS DEL OCCIDENTE A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "heriberto.ceomnay@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "41il9LU2zLg",
+      "nombre": "CONSEJO DE DESARROLLO AGROPECUARIO Y AGROINDUSTRIAL JALISCO, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "cesar.hernandez@cdaaj.org.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "N4jN0TXmZVU",
+      "nombre": "CONSEJO REGULADOR DEL TEQUILA, A.C",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rgomez@crt.org.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "GFmAXXE1h3c",
+      "nombre": "COLEGIO DE CONTADORES PÚBLICOS DE GUADALAJARA JALISCO, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "recursoshumanos@ccpg.org.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "SjjPrMNTaYY",
+      "nombre": "PROFESIONALES EN ASESORÍA INMOBILIARIA Y SIMILARES A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "oficina@pais.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "CQlfEwqJuZw",
+      "nombre": "OFICINA DE VISITANTES Y CONVENCIONES DE GUADALAJARA, A.C.",
+      "rubro": "Educación, Capacitación y Asociaciones Civiles",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "ofvcintegridad@gmail.com",
+          "ignacio@visitagdl.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "npg-jiZ0GVI",
+      "nombre": "TZM MEDIA S.A DE C.V",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contabilidad@traficozmg.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "kjE6ObscBM0",
+      "nombre": "PUBLIGLOBOS S.A DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "admon@publiglobos.com",
+          "angelofelix@publiglobos.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "f8P0ZzSyKYg",
+      "nombre": "04 ST, S.C.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "john.campos@cerocuatro.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "mYhlDnxlvos",
+      "nombre": "PUBLICIDAD MEDIOS Y EVENTOS R.M. S.A. DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rmpublicidadymedios@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "GaRaitLIvrY",
+      "nombre": "BRANDPACK, S.A. DE C.V. ",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "admon1@enie.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "tiZbDshkS7A",
+      "nombre": "AMATE EDITORIAL S.A.S",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "amateditorial@gmail.com",
+          "impresion.amate@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "oIhYOiERBbk",
+      "nombre": "BLACK ARMY, S.A DE C.V",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contactoblackarmy@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "xr0He-E2wpQ",
+      "nombre": "GRUPO EMPRESARIAL OFERTAS S. DE R.L DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "montiel@soloofertas.com",
+          "juridico@legal.soloofertas.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "N3r98hIR_Uo",
+      "nombre": "RAMONA CHÁVEZ CHÁVEZ ",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "diariosdemexico@prodigy.net.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "5sz0ueXB78Q",
+      "nombre": "ANZALDO EVENTOS, S. DE R.L.DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "anzaldo_eventos@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "9YStdT90Yrs",
+      "nombre": "PARABOLA ESTUDIOS S.A. DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "parabolarq@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "YgtBZRx4oUk",
+      "nombre": "AVATAR 360, S.A.P.I DE C.V. ",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "avatar.tres60@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "bEKCAB8MTBY",
+      "nombre": "CEREBRO AD MEDIA S.A. DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "mcruz@cerebrosm.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "9gJo6DjZRj0",
+      "nombre": "ACSI RESEARCH, S. DE R.L.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "adriana@acsiresearch.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "NO6UM3DIwEc",
+      "nombre": "ARAM Y ASOCIADOS S.A. DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "control@aram.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "QYmM1jg-F7U",
+      "nombre": "BI GEN S.A DE C.V",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "iferrer@alaruz.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "589jfZZL2zM",
+      "nombre": "NEWSPOT MEXICO S.A. DE C.V. (GLOBALMEDIA) ",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "adriana.gomez@gmnet.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "T-B3OMSHh-M",
+      "nombre": "ACTIVA DEL CENTRO S.A. DE C.V.",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "direccion@notisistema.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "zk27QiAI7aw",
+      "nombre": "DEEP INTELIGENCIA EMPRESARIAL S.A. DE C.V. ",
+      "rubro": "Marketing, Publicidad, Medios y Eventos",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "shei@grupodeep.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "etldW72n4YM",
+      "nombre": "HOTELERA OMS S.A. DE C.V.",
+      "rubro": "Turismo, Hotelería y Entretenimiento",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rh@alzenhoteleria.com",
+          "gerencia@encoreguadalajara.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "a12SteQ3zD0",
+      "nombre": "OPERADORA TURISTICA AURORA S.A. DE C.V.",
+      "rubro": "Turismo, Hotelería y Entretenimiento",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "gerencia@encoreguadalajara.com",
+          "rh@encoreguadalajara.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "j56EAiweG_c",
+      "nombre": "GLOBAL BOGA S.A. DE C.V.",
+      "rubro": "Turismo, Hotelería y Entretenimiento",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "vinculacion@circulodaat.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "MsViI6p8Fqk",
+      "nombre": "AERO CORPORACIÓN, AZOR S.A. DE C.V.",
+      "rubro": "Turismo, Hotelería y Entretenimiento",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "paolaa@azoraero.com",
+          "cmerino@azoraero.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "ltCsM4Bgako",
+      "nombre": "NUEVA ESPAÑA HOTEL(Graciela Moreno González)",
+      "rubro": "Turismo, Hotelería y Entretenimiento",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "floresamaria333@outlook.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "UJFOagzrQag",
+      "nombre": "Bella Vista Chapala SA de CV",
+      "rubro": "Turismo, Hotelería y Entretenimiento",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "justushauser@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "RGRlo8oNQKM",
+      "nombre": "OPERADORA MERLIN S.A. DE C.V.",
+      "rubro": "Turismo, Hotelería y Entretenimiento",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "maadc_22@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "maBbJh9fsyc",
+      "nombre": "INDUSTRIAS BAYARDO, S.A DE C.V.",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "sergiobt@salasbayardo.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "wglJihN99tM",
+      "nombre": "IVYASA MADERAS, S.A. DE C.V.",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "aux.admin@maderasivyasa.com",
+          "carolina@maderasivyasa.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Sn2l58FInG0",
+      "nombre": "SOA INTERIORISMO, S.A. DE C.V. ",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "coordinacion@soamobiliario.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "n78NTsNcgyw",
+      "nombre": "MOBIL FACTORY S.A DE C.V. ",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "joseluisrubiocovarrubias@gmail.com",
+          "mobilfactory2@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "j4PntKNH5Jk",
+      "nombre": "GRUPO MEXIVO, S.A. DE C.V.",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "gerencia@grumex.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "G-qJhw6W2Lk",
+      "nombre": "COMERCIALIZADORA MILART, S.A. DE C.V.",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "comercializadoramilart01@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "DHHKwWAtxXY",
+      "nombre": "INDUSTRIAS BITHENIA, S. DE P.R. DE R.L. DE C.V.",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "omarisidrocta@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "iBAyFhVV95Q",
+      "nombre": "CORTJAR S.A. DE C.V",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "seguridadprivadacortjar@gmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "983VHOg2LR4",
+      "nombre": "NEOESPACIO DISEÑO S.A. DE C.V.",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "neoespaciomx@hotmail.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "vkzDZ2Mm8fg",
+      "nombre": "HOCH MUEBLES S.A. DE C.V.",
+      "rubro": "Muebles, Madera e Interiorismo",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "compras@hochmobiliaria.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "LMu1rk7S388",
+      "nombre": "SEGUROS EL POTOSI, S.A.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "jalizaola@elpotosi.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "4E6xIfkId60",
+      "nombre": "METLIFE MÉXICO S.A. DE C.V",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "alejandro.jimenez1@metlife.com.mx",
+          "licitaciones@metlife.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "W_vsyEnFxqw",
+      "nombre": "CAJA SMG, S.C. DE A.P. DE R.L. DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "anunez@cajasmg.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "Cpwou5U-OKk",
+      "nombre": "KEY CAPITAL, S.A.P.I DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "janelly.mg@keycapital.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "dJ9eJf6WPlE",
+      "nombre": "SERVICIOS BROXEL, S.A.P.I DE C.V. ",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "yojhan.vazquez@tengovales.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "4A8qjPlRFBM",
+      "nombre": "GRUPO MEXICANO DE SEGUROS, S.A. DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "silvia.jimenez@gmx.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "kZ4FnbgGkJE",
+      "nombre": "ALAMO AGENTE DE SEGUROS Y DE FIANZAS, S.A. DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "gromerov@alamoseguros.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "6uRjWgaUrSQ",
+      "nombre": "EVOLANA S.A.P.I DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "rh@gfindere.com",
+          "gabriela@gfindere.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "-PFwXIdnE74",
+      "nombre": "TOKA INTERNACIONAL S.A.P.I. DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "mariaisabel.hernandez@toka.mx",
+          "edgar.bolanos@toka.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "8zOLcC41N_g",
+      "nombre": "PREVISIÓN DEL TRABAJO S.A. DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "jtovar@previvale.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "b6xVuWn2J5E",
+      "nombre": "CORPORATIVO ALPHA ROM, S.A.P.I DE C.V. ",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "contacto@romero-group.com.mx"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
+    },
+    {
+      "id": "YLejH320WtY",
+      "nombre": "WISPOK CAPITAL S.A.P.I DE C.V.",
+      "rubro": "Servicios Financieros y Seguros",
+      "municipio": null,
+      "contacto": {
+        "emails": [
+          "david@wispok.com",
+          "renata@wispok.com",
+          "daniela@wispok.com",
+          "admin@wispok.com"
+        ],
+        "telefono": null
+      },
+      "estatus": "Acreditada",
+      "fecha_acreditacion": "2026-10-22",
+      "fecha_renovacion": null,
+      "fecha_vigencia": "2027-10-22",
+      "fecha_cambio_estatus": null
     }
   ],
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "usuario": "admin",
       "contrasena": "admin123"
     },
     {
-      "id": 2,
+      "id": "2",
       "usuario": "PSS1",
       "contrasena": "pss123"
     }

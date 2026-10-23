@@ -54,7 +54,7 @@ async function syncStatuses(companies) {
             fecha_cambio_estatus: newStatus === "Desacreditada" ? getVigencyDate(company) : getToday()
         };
 
-        const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas/${company.id}`, {
+        const response = await fetch(`http://localhost:3000/empresas/${company.id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(changes)
@@ -64,9 +64,9 @@ async function syncStatuses(companies) {
     }
 }
 
-// SOLICITUD DE DATOS A LA API DE JSON SERVER CON RENDER PARA OBTENER LA LISTA DE EMPRESAS
+// SOLICITUD DE DATOS A LA API DE JSON SERVER PARA OBTENER LA LISTA DE EMPRESAS
 async function getCompany() {
-    const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas`);
+    const response = await fetch(`http://localhost:3000/empresas`);
     const companies = await response.json();
     console.log(companies);
 
@@ -253,7 +253,7 @@ document.getElementById("login-form-element").addEventListener("submit", async (
     document.getElementById("loading-screen").hidden = false;
  
     // Validación implementada solo para prototipo, requiere de un backend real para producción (seguridad real nula hasta que se trabaje con backend real).
-    const response = await fetch("https://directorio-pro-integridad-empresas.onrender.com/usuarios");
+    const response = await fetch("http://localhost:3000/usuarios");
     const usuarios = await response.json();
  
     const usuarioValido = usuarios.find(
@@ -355,7 +355,7 @@ document.getElementById("form-register-element").addEventListener("submit", asyn
 
     let response;
     try {
-        response = await fetch("https://directorio-pro-integridad-empresas.onrender.com/empresas", {
+        response = await fetch("http://localhost:3000/empresas", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newCompany)
@@ -521,7 +521,7 @@ document.getElementById("edit-company-form-element").addEventListener("submit", 
         fecha_cambio_estatus: companyBeingEdited.fecha_cambio_estatus
     };
  
-    const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas/${id}`, {
+    const response = await fetch(`http://localhost:3000/empresas/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -604,7 +604,7 @@ document.getElementById("delete-company-form-element").addEventListener("submit"
  
     const id = document.getElementById("delete-company-id").value;
  
-    const response = await fetch(`https://directorio-pro-integridad-empresas.onrender.com/empresas/${id}`, {
+    const response = await fetch(`http://localhost:3000/empresas/${id}`, {
         method: "DELETE"
     });
  
