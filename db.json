@@ -9634,17 +9634,5 @@
     "fecha_vigencia": "2027-10-22",
     "fecha_cambio_estatus": null
   }
-], 
-"usuarios": [
-    {
-      "id": "1",
-      "usuario": "admin",
-      "contrasena": "admin123"
-    },
-    {
-      "id": "2",
-      "usuario": "PSS1",
-      "contrasena": "pss123"
-    }
-  ]
+]
 }
