@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Administración · Directorio Pro Integridad</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="topbar">
+        <h1>Administración del directorio</h1>
+        <nav class="tabs">
+            <button type="button" class="tab active" data-tab="empresas">Empresas</button>
+            <button type="button" class="tab isAdmin" data-tab="usuarios" hidden>Usuarios</button>
+        </nav>
+        <span class="who">👤 <span id="who"></span></span>
+        <a class="btn btn-sm" href="../index.html" target="_blank" rel="noopener">Ver directorio</a>
+        <button type="button" class="btn btn-sm" id="btn-logout">Salir</button>
+    </div>
+
+    <main>
+        <!-- ============ EMPRESAS ============ -->
+        <section id="tab-empresas" class="panel">
+            <div id="msg" class="alert ok" hidden></div>
+            <div class="toolbar">
+                <input type="search" id="f-texto" placeholder="Buscar por nombre, correo o municipio...">
+                <select id="f-estatus">
+                    <option value="">Todos los estatus</option>
+                    <option value="Acreditada">Acreditada (vigente)</option>
+                    <option value="Vencida">Vencida</option>
+                    <option value="Desacreditada">Desacreditada</option>
+                </select>
+                <select id="f-rubro"><option value="">Todos los rubros</option></select>
+                <button type="button" class="btn btn-primary" id="btn-nueva">+ Nueva empresa</button>
+                <span class="count" id="count"></span>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th></th><th>Empresa</th><th>Rubro</th><th>Estatus</th><th>Vigencia</th><th></th></tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+            <div class="pager">
+                <button type="button" class="btn btn-sm" id="prev">←</button>
+                <span id="page-info"></span>
+                <button type="button" class="btn btn-sm" id="next">→</button>
+            </div>
+        </section>
+
+        <!-- ============ USUARIOS ============ -->
+        <section id="tab-usuarios" class="panel" hidden>
+            <div id="u-msg" class="alert ok" hidden></div>
+            <h3 style="margin-bottom:10px">Nuevo usuario</h3>
+            <form id="u-form" class="inline-form" autocomplete="off">
+                <div class="field"><label for="u-usuario">Usuario</label><input id="u-usuario" required minlength="3" maxlength="50"></div>
+                <div class="field"><label for="u-password">Contraseña (mín. 8)</label><input id="u-password" type="password" required minlength="8" autocomplete="new-password"></div>
+                <div class="field"><label for="u-rol">Rol</label>
+                    <select id="u-rol"><option value="editor">editor</option><option value="admin">admin</option></select>
+                </div>
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </form>
+            <table>
+                <thead><tr><th>Usuario</th><th>Rol</th><th>Creado</th><th></th></tr></thead>
+                <tbody id="u-tbody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Formulario de empresa -->
+    <dialog id="dlg-empresa">
+        <form class="dlg-body" id="form-empresa" novalidate>
+            <h2 id="dlg-titulo">Nueva empresa</h2>
+            <div id="form-error" class="alert" hidden></div>
+
+            <div class="field">
+                <label for="nombre">Nombre *</label>
+                <input id="nombre" name="nombre" maxlength="150">
+                <span class="err" data-err="nombre"></span>
+            </div>
+            <div class="grid2">
+                <div class="field">
+                    <label for="rubro_id">Rubro *</label>
+                    <select id="rubro_id" name="rubro_id"></select>
+                    <span class="err" data-err="rubro_id"></span>
+                </div>
+                <div class="field">
+                    <label for="estatus">Estatus *</label>
+                    <select id="estatus" name="estatus" class="isAdminForm">
+                        <option>Acreditada</option>
+                        <option>Desacreditada</option>
+                    </select>
+                    <span class="err" data-err="estatus"></span>
+                </div>
+                <div class="field">
+                    <label for="municipio">Municipio</label>
+                    <input id="municipio" name="municipio" maxlength="100">
+                    <span class="err" data-err="municipio"></span>
+                </div>
+                <div class="field">
+                    <label for="telefono">Teléfono</label>
+                    <input id="telefono" name="telefono" maxlength="30" inputmode="tel">
+                    <span class="err" data-err="telefono"></span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Correos * (mínimo 1, máximo 5)</label>
+                <div id="emails-list"></div>
+                <div><button type="button" class="btn btn-sm" id="btn-add-email">+ Agregar correo</button></div>
+                <span class="err" data-err="emails"></span>
+            </div>
+
+            <div class="grid2">
+                <div class="field">
+                    <label for="fecha_acreditacion">Fecha de acreditación *</label>
+                    <input id="fecha_acreditacion" name="fecha_acreditacion" type="date" class="isAdminForm">
+                    <span class="err" data-err="fecha_acreditacion"></span>
+                </div>
+                <div class="field">
+                    <label for="fecha_vigencia">Fecha de vigencia</label>
+                    <input id="fecha_vigencia" name="fecha_vigencia" type="date" class="isAdminForm">
+                    <span class="hint">Si la dejas vacía: acreditación + 365 días.</span>
+                    <span class="err" data-err="fecha_vigencia"></span>
+                </div>
+            </div>
+
+            <p class="sub isEditorOnly" hidden style="margin-bottom:12px">Estatus y fechas solo los modifica un administrador. Las empresas nuevas se crean "En Proceso" hasta que un admin las acredite.</p>
+
+            <div class="field">
+                <label for="logo">Logo (PNG, JPG o WEBP, máx. 2 MB)</label>
+                <div class="logo-box">
+                    <img id="logo-prev" class="logo-prev" alt="" hidden>
+                    <div>
+                        <input id="logo" name="logo" type="file" accept="image/png,image/jpeg,image/webp">
+                        <label id="remove-wrap" style="font-weight:400" hidden>
+                            <input type="checkbox" id="remove_logo"> Quitar logo actual
+                        </label>
+                    </div>
+                </div>
+                <span class="err" data-err="logo"></span>
+            </div>
+
+            <div class="dlg-actions">
+                <button type="button" class="btn" id="btn-cancelar">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Cambio de contraseña -->
+    <dialog id="dlg-pass">
+        <form class="dlg-body" id="form-pass">
+            <h2 id="pass-titulo">Cambiar contraseña</h2>
+            <div id="pass-error" class="alert" hidden></div>
+            <div class="field">
+                <label for="new-pass">Nueva contraseña (mín. 8)</label>
+                <input id="new-pass" type="password" minlength="8" required autocomplete="new-password">
+            </div>
+            <div class="dlg-actions">
+                <button type="button" class="btn" id="pass-cancelar">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>
