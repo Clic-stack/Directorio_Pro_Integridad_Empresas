@@ -1,0 +1,4 @@
+# Archivos internos: no deben abrirse directo desde el navegador
+<FilesMatch "^(config|db|bootstrap|crear_admin)\.php$">
+    Require all denied
+</FilesMatch>

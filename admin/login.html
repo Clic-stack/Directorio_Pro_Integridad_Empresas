@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Acceso administradores</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="login-box">
+        <h1>Directorio Pro Integridad<br><span class="sub">Acceso administradores</span></h1>
+        <div id="login-error" class="alert" hidden></div>
+        <form id="login-form" autocomplete="on">
+            <div class="field">
+                <label for="usuario">Usuario</label>
+                <input id="usuario" name="usuario" type="text" autocomplete="username" required autofocus>
+            </div>
+            <div class="field">
+                <label for="password">Contraseña</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%" id="btn-login">Entrar</button>
+        </form>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+</html>

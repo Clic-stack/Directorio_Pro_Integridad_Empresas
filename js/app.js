@@ -3,9 +3,9 @@ let filteredCompanies = [];
 let currentPage = 1;
 let totalPages = 1;
 const COMPANIES_PER_PAGE = 8;
-// API en Render (json-server): GET /empresas devuelve el arreglo de empresas
-const API_URL = "https://directorio-pro-integridad-empresas.onrender.com";
-const DATA_URL = `${API_URL}/empresas`;
+    // API propia en PHP: GET api/empresas.php devuelve el arreglo de empresas vigentes
+    const API_URL = "api";
+    const DATA_URL = `${API_URL}/empresas.php`;
 
 const iconsByCategory = {
     "Construcción, Arquitectura y Obra Civil": "🏗️",
@@ -31,6 +31,13 @@ const iconsByCategory = {
 }
 
 
+// Los datos los captura el admin: se escapan antes de insertarlos como HTML
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, c => (
+        { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+    ));
+}
+
 function getToday() {
     return new Date().toLocaleDateString("sv-SE");
 }
@@ -46,13 +53,12 @@ function getVigencyDate(company) {
 
 // Si ya pasó la fecha de vigencia, la empresa pasa a Desacreditada y deja de mostrarse
 function getEffectiveStatus(company) {
-    if (company.estatus === "En Proceso") return "En Proceso";
     return getVigencyDate(company) < getToday() ? "Desacreditada" : "Acreditada";
 }
 
 // Campos obligatorios: id, nombre, rubro, al menos un email, estatus y fecha_acreditacion.
 // La fecha_vigencia también es obligatoria: viene del JSON o se calcula con fecha_acreditacion + 365 días.
-// Opcionales: logo, municipio, telefono, fecha_renovacion, fecha_cambio_estatus.
+// Opcionales: logo, municipio, telefono, fecha_cambio_estatus.
 function isValidCompany(company) {
     return Boolean(
         company &&
@@ -108,17 +114,17 @@ function renderCard(companies) {
         const icon = iconsByCategory[company.rubro] || "🏢";
         const iconClass = company.logo ? "icon-card has-logo" : "icon-card";
         const iconContent = company.logo
-            ? `<img src="${company.logo}" alt="" class="icon-card-img">`
+            ? `<img src="src/logo/${escapeHTML(company.logo)}" alt="" class="icon-card-img">`
             : icon;
         const status = getEffectiveStatus(company);
-        return `<div class="company-card" data-id="${company.id}" data-category="${company.rubro}" data-status="${status}">
+        return `<div class="company-card" data-id="${escapeHTML(company.id)}" data-category="${escapeHTML(company.rubro)}" data-status="${escapeHTML(status)}">
         <div class="top-card">
         <span class="${iconClass}">${iconContent}</span>
-        <span class="badge">${status}</span>
+        <span class="badge">${escapeHTML(status)}</span>
         <img src="src/logo_distintivo_pro-integridad.png" alt="Distintivo Pro Integridad" class="logo-card">
         </div>
-        <p class="name-card">${company.nombre}</p>
-        <p class="detail-card">${company.rubro}${company.municipio ? " · " + company.municipio : ""}</p>
+        <p class="name-card">${escapeHTML(company.nombre)}</p>
+        <p class="detail-card">${escapeHTML(company.rubro)}${company.municipio ? " · " + escapeHTML(company.municipio) : ""}</p>
         <button type="button" class="btn-contact">✉️ Contactar</button>
         </div>`;
     });
@@ -251,10 +257,10 @@ document.getElementById("company-container").addEventListener("click", (event) =
  
         const options = [];
         company.contacto.emails.forEach(email => {
-            options.push(`<a class="contact-option" href="mailto:${email}">✉️ ${email}</a>`);
+            options.push(`<a class="contact-option" href="mailto:${escapeHTML(email)}">✉️ ${escapeHTML(email)}</a>`);
         });
         if (company.contacto?.telefono) {
-            options.push(`<a class="contact-option" href="tel:${company.contacto.telefono}">📞 ${company.contacto.telefono}</a>`);
+            options.push(`<a class="contact-option" href="tel:${escapeHTML(company.contacto.telefono)}">📞 ${escapeHTML(company.contacto.telefono)}</a>`);
         }
  
         document.getElementById("contact-menu-title").textContent = `Contactar a ${company.nombre}`;
