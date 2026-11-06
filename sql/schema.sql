@@ -31,7 +31,6 @@ CREATE TABLE empresas (
   creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   actualizado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
-  UNIQUE KEY uq_empresas_legacy (legacy_id),
   KEY idx_empresas_rubro (rubro_id),
   KEY idx_empresas_estatus (estatus),
   KEY idx_empresas_nombre (nombre),
