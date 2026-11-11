@@ -3,6 +3,7 @@ declare(strict_types=1);
 // GET público: devuelve el mismo formato JSON que tenía json-server (arreglo de empresas).
 
 require __DIR__ . '/db.php';
+require __DIR__ . '/vigencia.php';
 
 date_default_timezone_set('America/Mexico_City');
 
@@ -17,6 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 try {
     $pdo = db();
 
+    // Antes de listar, se pasan a "Desacreditada" las empresas cuya vigencia ya venció
+    // (y se anotan en la bitácora). Así el estatus guardado siempre coincide con la fecha.
+    vig_sincronizar($pdo);
+
     // Solo empresas acreditadas, con vigencia al día y con al menos un correo (lo exige isValidCompany en app.js)
     $sql = "SELECT e.id, e.nombre, r.nombre AS rubro, e.logo, e.municipio, e.telefono,
                    e.estatus, e.fecha_acreditacion,
@@ -28,7 +33,7 @@ try {
               AND EXISTS (SELECT 1 FROM empresa_emails m WHERE m.empresa_id = e.id)
             ORDER BY e.nombre";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':hoy' => date('Y-m-d')]);
+    $stmt->execute([':hoy' => vig_hoy()]);
     $empresas = $stmt->fetchAll();
 
     $emails = [];

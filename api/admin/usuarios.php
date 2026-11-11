@@ -7,8 +7,10 @@ declare(strict_types=1);
 // DELETE ?id=N    -> eliminar (no a uno mismo)
 
 require __DIR__ . '/../bootstrap.php';
+require __DIR__ . '/../vigencia.php';
 $me = require_admin();
 $pdo = db();
+$actor = bit_actor($pdo, $me);
 $method = $_SERVER['REQUEST_METHOD'];
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
@@ -44,10 +46,27 @@ if ($method === 'DELETE') {
     if ($id === $me['id']) {
         fail(422, 'No puedes eliminar tu propio usuario.');
     }
-    $stmt = $pdo->prepare('DELETE FROM usuarios WHERE id = ?');
+    // Se consulta antes de borrar: después ya no habría de dónde sacar el nombre
+    $stmt = $pdo->prepare('SELECT usuario, rol FROM usuarios WHERE id = ?');
     $stmt->execute([$id]);
-    if ($stmt->rowCount() === 0) {
+    $target = $stmt->fetch();
+    if (!$target) {
         fail(404, 'Usuario no encontrado');
+    }
+    try {
+        $pdo->beginTransaction();
+        $pdo->prepare('DELETE FROM usuarios WHERE id = ?')->execute([$id]);
+        bit_registrar($pdo, $actor, 'usuario_eliminar', null, $target['usuario'], [
+            'usuario' => [$target['usuario'], null],
+            'rol' => [$target['rol'], null],
+        ]);
+        $pdo->commit();
+    } catch (Throwable $e) {
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
+        error_log($e->getMessage());
+        fail(500, 'No se pudo eliminar el usuario.');
     }
     json_out(200, ['ok' => true]);
 }
@@ -60,9 +79,10 @@ $in = read_json();
 
 // ---- Actualizar contraseña y/o rol
 if ($id > 0) {
-    $exists = $pdo->prepare('SELECT COUNT(*) FROM usuarios WHERE id = ?');
-    $exists->execute([$id]);
-    if (!(int) $exists->fetchColumn()) {
+    $stmt = $pdo->prepare('SELECT usuario, rol FROM usuarios WHERE id = ?');
+    $stmt->execute([$id]);
+    $target = $stmt->fetch();
+    if (!$target) {
         fail(404, 'Usuario no encontrado');
     }
     $hasPass = isset($in['password']) && $in['password'] !== '';
@@ -79,11 +99,28 @@ if ($id > 0) {
     }
     if ($hasPass) {
         check_password((string) $in['password']);
-        $pdo->prepare('UPDATE usuarios SET password_hash = ? WHERE id = ?')
-            ->execute([password_hash((string) $in['password'], PASSWORD_DEFAULT), $id]);
     }
-    if ($hasRol) {
-        $pdo->prepare('UPDATE usuarios SET rol = ? WHERE id = ?')->execute([$in['rol'], $id]);
+    try {
+        $pdo->beginTransaction();
+        if ($hasPass) {
+            $pdo->prepare('UPDATE usuarios SET password_hash = ? WHERE id = ?')
+                ->execute([password_hash((string) $in['password'], PASSWORD_DEFAULT), $id]);
+            // Jamás se guarda la contraseña (ni su hash) en la bitácora: solo el hecho de que cambió
+            bit_registrar($pdo, $actor, 'usuario_password', null, $target['usuario'], null);
+        }
+        if ($hasRol && (string) $in['rol'] !== $target['rol']) {
+            $pdo->prepare('UPDATE usuarios SET rol = ? WHERE id = ?')->execute([$in['rol'], $id]);
+            bit_registrar($pdo, $actor, 'usuario_rol', null, $target['usuario'], [
+                'rol' => [$target['rol'], (string) $in['rol']],
+            ]);
+        }
+        $pdo->commit();
+    } catch (Throwable $e) {
+        if ($pdo->inTransaction()) {
+            $pdo->rollBack();
+        }
+        error_log($e->getMessage());
+        fail(500, 'No se pudo actualizar el usuario.');
     }
     json_out(200, ['ok' => true]);
 }
@@ -99,9 +136,18 @@ $rol = (string) ($in['rol'] ?? 'editor');
 check_rol($rol);
 
 try {
+    $pdo->beginTransaction();
     $pdo->prepare('INSERT INTO usuarios (usuario, password_hash, rol) VALUES (?, ?, ?)')
         ->execute([$usuario, password_hash($password, PASSWORD_DEFAULT), $rol]);
+    bit_registrar($pdo, $actor, 'usuario_crear', null, $usuario, [
+        'usuario' => [null, $usuario],
+        'rol' => [null, $rol],
+    ]);
+    $pdo->commit();
 } catch (PDOException $e) {
+    if ($pdo->inTransaction()) {
+        $pdo->rollBack();
+    }
     if ($e->getCode() === '23000') {
         fail(409, 'Ese usuario ya existe.');
     }
