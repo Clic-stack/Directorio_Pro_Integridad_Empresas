@@ -5,6 +5,7 @@ CREATE DATABASE IF NOT EXISTS directorio_pro_integridad
 USE directorio_pro_integridad;
 
 SET NAMES utf8mb4;
+DROP TABLE IF EXISTS bitacora;
 DROP TABLE IF EXISTS empresa_emails;
 DROP TABLE IF EXISTS empresas;
 DROP TABLE IF EXISTS rubros;
@@ -31,7 +32,6 @@ CREATE TABLE empresas (
   creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   actualizado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
-  UNIQUE KEY uq_empresas_legacy (legacy_id),
   KEY idx_empresas_rubro (rubro_id),
   KEY idx_empresas_estatus (estatus),
   KEY idx_empresas_nombre (nombre),
@@ -57,4 +57,22 @@ CREATE TABLE usuarios (
   creado_en TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   UNIQUE KEY uq_usuarios_usuario (usuario)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Bitácora: quién hizo qué y cuándo. No lleva llave foránea a propósito: el registro
+-- debe sobrevivir aunque se elimine la empresa o el usuario. Por eso guarda copias
+-- del nombre de la empresa y del usuario.
+CREATE TABLE bitacora (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  fecha_hora DATETIME NOT NULL,
+  usuario VARCHAR(50) NOT NULL,          -- 'sistema' cuando el cambio es automático
+  rol VARCHAR(10) NULL,
+  accion VARCHAR(30) NOT NULL,           -- crear, editar, renovar, eliminar, baja_vencimiento, reactivacion, usuario_*
+  empresa_id INT UNSIGNED NULL,
+  empresa_nombre VARCHAR(150) NULL,
+  cambios TEXT NULL,                     -- JSON: {"campo": [antes, despues]}
+  PRIMARY KEY (id),
+  KEY idx_bitacora_fecha (fecha_hora),
+  KEY idx_bitacora_accion (accion),
+  KEY idx_bitacora_empresa (empresa_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

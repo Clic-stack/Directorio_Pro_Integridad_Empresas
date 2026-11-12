@@ -13,6 +13,8 @@
         <nav class="tabs">
             <button type="button" class="tab active" data-tab="empresas">Empresas</button>
             <button type="button" class="tab isAdmin" data-tab="usuarios" hidden>Usuarios</button>
+            <!-- Nueva funcionalidad implementada para llevar un registro de todas las acciones realizadas en el sistema -->
+            <button type="button" class="tab" data-tab="bitacora">Bitácora</button>
         </nav>
         <span class="who">👤 <span id="who"></span></span>
         <a class="btn btn-sm" href="../index.html" target="_blank" rel="noopener">Ver directorio</a>
@@ -23,16 +25,25 @@
         <!-- ============ EMPRESAS ============ -->
         <section id="tab-empresas" class="panel">
             <div id="msg" class="alert ok" hidden></div>
+
+            <!-- Avisos: se llenan desde admin.js (por vencer, vencidas, sin correo) -->
+            <div id="avisos" class="avisos"></div>
+            <!-- Barra que aparece al entrar a una vista filtrada desde un aviso -->
+            <div id="vista-bar" class="vista-bar" hidden>
+                <button type="button" class="btn btn-sm" id="vista-volver">← Volver al listado</button>
+                <strong id="vista-titulo"></strong>
+            </div>
+
             <div class="toolbar">
                 <input type="search" id="f-texto" placeholder="Buscar por nombre, correo o municipio...">
                 <select id="f-estatus">
                     <option value="">Todos los estatus</option>
                     <option value="Acreditada">Acreditada (vigente)</option>
-                    <option value="Vencida">Vencida</option>
+                    <option value="PorVencer">Por vencer</option>
                     <option value="Desacreditada">Desacreditada</option>
                 </select>
                 <select id="f-rubro"><option value="">Todos los rubros</option></select>
-                <button type="button" class="btn btn-primary" id="btn-nueva">+ Nueva empresa</button>
+                <button type="button" class="btn btn-primary isAdmin" id="btn-nueva" hidden>+ Nueva empresa</button>
                 <span class="count" id="count"></span>
             </div>
             <div class="table-wrap">
@@ -67,6 +78,40 @@
                 <tbody id="u-tbody"></tbody>
             </table>
         </section>
+
+        <!-- ============ BITÁCORA ============ -->
+        <section id="tab-bitacora" class="panel" hidden>
+            <div id="b-resumen" class="resumen"></div>
+            <div class="toolbar">
+                <input type="search" id="b-q" placeholder="Buscar por empresa o usuario...">
+                <select id="b-accion">
+                    <option value="">Todas las acciones</option>
+                    <option value="crear">Alta de empresa</option>
+                    <option value="editar">Edición</option>
+                    <option value="renovar">Renovación</option>
+                    <option value="eliminar">Eliminación</option>
+                    <option value="baja_vencimiento">Baja por vencimiento</option>
+                    <option value="usuario_crear" class="isAdmin" hidden>Usuario: alta</option>
+                    <option value="usuario_rol" class="isAdmin" hidden>Usuario: cambio de rol</option>
+                    <option value="usuario_password" class="isAdmin" hidden>Usuario: cambio de contraseña</option>
+                    <option value="usuario_eliminar" class="isAdmin" hidden>Usuario: baja</option>
+                </select>
+                <span class="count" id="b-count"></span>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Fecha y hora</th><th>Usuario</th><th>Acción</th><th>Empresa</th><th>Detalle</th></tr>
+                    </thead>
+                    <tbody id="b-tbody"></tbody>
+                </table>
+            </div>
+            <div class="pager">
+                <button type="button" class="btn btn-sm" id="b-prev">←</button>
+                <span id="b-page-info"></span>
+                <button type="button" class="btn btn-sm" id="b-next">→</button>
+            </div>
+        </section>
     </main>
 
     <!-- Formulario de empresa -->
@@ -87,12 +132,12 @@
                     <span class="err" data-err="rubro_id"></span>
                 </div>
                 <div class="field">
-                    <label for="estatus">Estatus *</label>
-                    <select id="estatus" name="estatus" class="isAdminForm">
+                    <label for="estatus">Estatus (automático)</label>
+                    <select id="estatus" name="estatus" disabled>
                         <option>Acreditada</option>
                         <option>Desacreditada</option>
                     </select>
-                    <span class="err" data-err="estatus"></span>
+                    <span class="hint">Automático: Acreditada mientras la vigencia no haya vencido (acreditación + 365 días).</span>
                 </div>
                 <div class="field">
                     <label for="municipio">Municipio</label>
@@ -120,14 +165,13 @@
                     <span class="err" data-err="fecha_acreditacion"></span>
                 </div>
                 <div class="field">
-                    <label for="fecha_vigencia">Fecha de vigencia</label>
-                    <input id="fecha_vigencia" name="fecha_vigencia" type="date" class="isAdminForm">
-                    <span class="hint">Si la dejas vacía: acreditación + 365 días.</span>
-                    <span class="err" data-err="fecha_vigencia"></span>
+                    <label for="fecha_vigencia">Fecha de vigencia (automática)</label>
+                    <input id="fecha_vigencia" name="fecha_vigencia" type="date" disabled>
+                    <span class="hint">Cálculo autómatico: fecha acreditación + 365 días.</span>
                 </div>
             </div>
 
-            <p class="sub isEditorOnly" hidden style="margin-bottom:12px">Estatus y fechas solo los modifica un administrador. Las empresas nuevas se crean "En Proceso" hasta que un admin las acredite.</p>
+            <p class="sub isEditorOnly" hidden style="margin-bottom:12px">Una vez que creas una empresa con una fecha de acreditación, esta no se puede corregir. Sin embargo si puedes modificar o actualizar la fecha de vigencia de una empresa usando el botón de "Renovar Vigencia".</p>
 
             <div class="field">
                 <label for="logo">Logo (PNG, JPG o WEBP, máx. 2 MB)</label>
@@ -144,8 +188,30 @@
             </div>
 
             <div class="dlg-actions">
+                <button type="button" class="btn btn-left" id="btn-renovar-form" hidden>Renovar Vigencia</button>
                 <button type="button" class="btn" id="btn-cancelar">Cancelar</button>
                 <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Renovar vigencia: lo único editable es la fecha de renovación -->
+    <dialog id="dlg-renovar">
+        <form class="dlg-body" id="form-renovar" novalidate>
+            <h2>Renovar vigencia</h2>
+            <p id="ren-nombre" style="font-weight:600;margin-bottom:4px"></p>
+            <p id="ren-actual" class="sub" style="margin-bottom:14px"></p>
+            <div id="ren-error" class="alert" hidden></div>
+            <div class="field">
+                <label for="fecha_renovacion">Fecha de renovación *</label>
+                <input id="fecha_renovacion" name="fecha_renovacion" type="date">
+                <span class="hint">Pasa a ser la nueva fecha de acreditación. No puede ser futura.</span>
+                <span class="err" data-err="fecha_renovacion"></span>
+            </div>
+            <p id="ren-preview" class="sub" style="margin-bottom:6px"></p>
+            <div class="dlg-actions">
+                <button type="button" class="btn" id="ren-cancelar">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="ren-guardar">Renovar</button>
             </div>
         </form>
     </dialog>
