@@ -72,9 +72,8 @@ function isValidCompany(company) {
     );
 }
 
-// SOLICITUD DE DATOS A LA API DE RENDER PARA OBTENER LA LISTA DE EMPRESAS
+// SOLICITUD DE DATOS A LA API (api/empresas.php) PARA OBTENER LA LISTA DE EMPRESAS
 async function getCompany() {
-    // El plan gratuito de Render "duerme" el servidor: la primera consulta puede tardar cerca de 1 minuto
     document.getElementById("company-container").innerHTML =
         `<p class="detail-card">Cargando empresas...</p>`;
     try {
