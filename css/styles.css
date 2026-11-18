@@ -13,6 +13,9 @@
     --color-icono-fondo: #dbeafe;
     --color-rojo-fondo: #fee2e2;
     --color-rojo-texto: #b91c1c;
+    --slate: #3d4b53;
+    --accent: #ff8200;
+    --color-fondo-suave: #f3f4f6;
     
     /* Radios */
     --radio-tarjeta: 16px;
@@ -140,7 +143,8 @@ header h1 {
     text-overflow: ellipsis;
 }
 
-.sr-only { 
+.sr-only,
+.visually-hidden { 
     position: absolute; 
     width: 1px; 
     height: 1px; 
@@ -481,6 +485,88 @@ header h1 {
   color: var(--color-texto-principal);
 }
 
+/* FOOTER */
+.site-footer {
+    background: var(--slate);
+    color: #cfd8dc;
+    margin-top: 40px;
+    font-size: 13.5px;
+}
+
+.footer-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px 24px 8px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 28px;
+}
+
+.footer-title {
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--accent);
+}
+
+.footer-text {
+    max-width: 36ch;
+}
+
+.footer-address {
+    font-style: normal;
+}
+
+.footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.site-footer a {
+    color: #fff;
+    text-underline-offset: 3px;
+}
+
+.footer-list a {
+    text-decoration: none;
+}
+
+.footer-list a:hover,
+.footer-list a:focus-visible {
+    text-decoration: underline;
+}
+
+.footer-list span[aria-hidden="true"] {
+    margin-right: 6px;
+    font-size: 0.95em;
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.footer-legal {
+    max-width: 920px;
+    margin: 24px auto 0;
+    padding: 16px 24px 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 20px;
+    font-size: 12.5px;
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 18px;
+}
+
 @media (max-width: 710px) {
     #page-container { 
         margin: 0; 
@@ -537,6 +623,13 @@ header h1 {
 
     #error-message {
         font-size: 11px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+    .footer-legal {
+        flex-direction: column;
     }
  }
 

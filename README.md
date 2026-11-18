@@ -229,20 +229,11 @@ UPDATE empresas SET rubro_id = 5 WHERE id = 123;
 5. Público: `http://localhost/(nombre_proyecto)/` · Admin: `http://localhost/(nombre_proyecto)/admin/login.html`.
    Los demás usuarios (admin o editor) se crean desde la pestaña **Usuarios**.
 
-### Servidor Linux (Apache + PHP + MySQL)
+### Servidor Linux (producción: Apache + PHP + MySQL)
 
-1. Paquetes: `apache2 php php-mysql php-mbstring mysql-server` (o `mariadb-server`).
-2. Crea un usuario MySQL propio (no `root`) con permisos SELECT, INSERT, UPDATE y DELETE solo sobre `directorio_pro_integridad`, y ponlo en `api/config.php` (cópialo desde `api/config.example.php`).
-3. Importa `schema.sql` y `seed.sql`; crea el admin con `php api/crear_admin.php usuario 'clave'`.
-4. Permisos: `sudo chown -R www-data:www-data src/logo` (ahí se guardan los logos subidos).
-5. Apache necesita `AllowOverride All` (o `FileInfo Limit`) en el directorio para que funcionen los `.htaccess`.
-6. Usa HTTPS (certbot). Si PHP limita las subidas, `upload_max_filesize` y `post_max_size` deben ser >= 3M.
-7. Después de desplegar puedes borrar la carpeta `sql/` o dejarla bloqueada por su `.htaccess`.
-8. Antes de abrirlo al público: cambiar la contraseña del admin, no dejar contraseñas reales en el repositorio y vaciar los datos de prueba (`TRUNCATE TABLE bitacora;`).
+La instalación en el servidor de la Contraloría (paquetes, usuario de base de datos, permisos, HTTPS, respaldos y pruebas de aceptación) está en **[DESPLIEGUE.md](DESPLIEGUE.md)**.
 
 ## Pendientes antes de producción
 
 - Cargar las fechas reales de acreditación (de ellas salen la vigencia y el estatus) y los logos faltantes.
-- Decidir si solo el admin puede renovar (`RENOVAR_SOLO_ADMIN`).
-- Autorización para publicar correos y teléfonos de las empresas.
 - Credenciales de la base de datos y contraseña del admin definitivas (solo en el `api/config.php` del servidor, nunca en el repositorio).
