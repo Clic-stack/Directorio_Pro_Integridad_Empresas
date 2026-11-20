@@ -201,23 +201,30 @@ Con el sistema instalado, verifica:
 
 **Público**
 - [ ] La página carga con las tarjetas, el buscador, el filtro de rubros y la paginación.
+- [ ] El buscador sugiere empresas al escribir y se puede navegar con ↑ ↓ y Esc.
+- [ ] Una búsqueda sin resultados muestra el aviso y este desaparece solo.
+- [ ] El modal de contacto abre el correo con un clic y el botón de copiar funciona.
 - [ ] No aparecen empresas desacreditadas.
+- [ ] En el footer, "Aviso de privacidad" y "Convocatoria" abren su PDF.
+- [ ] La página se ve bien en celular.
 
 **Panel (administrador)** — `https://DOMINIO/admin/login.html`
 - [ ] Inicia y cierra sesión.
-- [ ] Crea, edita (con logo) y elimina una empresa de prueba.
+- [ ] Crea, edita (con logo) y elimina una empresa de prueba. Al eliminarla, su logo desaparece de `src/logo/`.
 - [ ] Renueva una empresa y revisa que la Bitácora muestre el movimiento.
 - [ ] Crea un usuario editor desde la pestaña Usuarios.
 - [ ] Los banners (por vencer, bajas por vencimiento, sin contacto, renovaciones) se ven y sus botones funcionan.
+
+**Seguridad**
+- [ ] Las rutas de la sección 10 responden 403 o 404.
+- [ ] `https://DOMINIO/src/logo/` no lista archivos.
+- [ ] El sitio solo se puede usar por HTTPS.
 
 **Panel (editor)**
 - [ ] No ve el botón de crear ni de eliminar empresas.
 - [ ] Rubro y fecha de acreditación aparecen bloqueados al editar.
 - [ ] No ve los movimientos de usuarios en la Bitácora.
 
-**Seguridad**
-- [ ] Las rutas de la sección 10 responden 403 o 404.
-- [ ] El sitio solo se puede usar por HTTPS.
 
 ## 13. Antes de abrirlo al público
 
@@ -229,9 +236,6 @@ TRUNCATE TABLE bitacora;
 ```
 
 - [ ] **Contraseña del administrador** definitiva y distinta de las de prueba.
-- [ ] **Autorización** para publicar los correos y teléfonos de las empresas.
-- [ ] **Aviso de privacidad** publicado y enlazado desde la página pública. **[COMPLETAR]**
-- [ ] **Decisión:** si solo el administrador puede renovar (constante `RENOVAR_SOLO_ADMIN` en `api/admin/empresas.php`; por defecto la pueden usar ambos roles).
 - [ ] Respaldos configurados y probados.
 
 ## 14. Operación y mantenimiento
@@ -243,6 +247,7 @@ TRUNCATE TABLE bitacora;
 - **Recuperar acceso de administrador:** `php api/crear_admin.php USUARIO 'NUEVA_CLAVE'` desde la consola del servidor. No hay recuperación de contraseña por correo.
 - **Protección contra intentos de acceso repetidos:** el sistema limita los intentos por sesión (5 fallos bloquean 60 segundos), pero se puede evadir borrando cookies. Se recomienda complementarlo con `fail2ban` o límites de peticiones en Apache.
 - **Actualizar el código:** `sudo git pull` desde la carpeta del proyecto. Revisa el `README.md` por si hay cambios en la base de datos.
+- **Logos de empresas eliminadas:** al eliminar una empresa desde el panel, su logo se borra solo si ninguna otra lo usa. Si se elimina directamente en la base de datos, el archivo queda en `src/logo/` y hay que borrarlo a mano.
 
 ## 15. Problemas frecuentes
 
@@ -252,4 +257,4 @@ TRUNCATE TABLE bitacora;
 | "No se pudo cargar el directorio" | Credenciales incorrectas en `api/config.php` o la base no está importada. |
 | No se pueden subir logos | `src/logo/` sin permiso de escritura para `www-data`, o `upload_max_filesize` muy bajo. |
 | Las empresas vencidas no se dan de baja | El usuario de MySQL no tiene permisos de UPDATE o INSERT. |
-| El inicio de sesión no se mantiene | El sitio se abre por HTTP mientras la cookie exige HTTPS, o hay un balanceador que no reenvía el encabezado de HTTPS. |
+| El inicio de sesión no se mantiene | El sitio se abre por HTTP mientras la cookie exige HTTPS, o hay un balanceador que no reenvía el encabezado de HTTPS. | El botón de copiar correo no funciona | El sitio se abre por HTTP; el portapapeles del navegador requiere HTTPS. |

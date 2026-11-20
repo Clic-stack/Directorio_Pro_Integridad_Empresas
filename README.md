@@ -19,7 +19,7 @@ La regla de diseño es que **el navegador nunca es la autoridad**. Todo lo que o
 
 ```
 directorio/
-├── index.html
+├── index.html · README.md · DESPLIEGUE.md
 ├── js/   admin.js · app.js · login.js
 ├── css/  styles.css · admin.css
 │
@@ -46,7 +46,9 @@ directorio/
 │
 └── src/
     ├── logo_distintivo_pro-integridad.png
-    └── logo/               logos de las empresas
+    ├── documentos/         aviso de privacidad y convocatoria (PDF)
+    ├── icons/              icono de whatsapp usado para el footer
+    └── logo/               logos de las empresas (en la BD se guarda solo el nombre del archivo)
 ```
 
 La separación de `api/` y `api/admin/` define el perímetro: todo lo que está en `api/admin/` empieza con `require_auth()` o `require_admin()`, y lo de `api/` fuera de esa carpeta es público o es de sesión.
@@ -75,7 +77,7 @@ La separación de `api/` y `api/admin/` define el perímetro: todo lo que está 
 - La fecha de renovación pasa a ser la nueva fecha de acreditación (y la vigencia se recalcula desde ella).
 - Debe ser una fecha válida, no futura y posterior a la acreditación actual.
 - La fecha anterior queda guardada en la bitácora.
-- Está disponible en el formulario de edición y en las listas de avisos. Por defecto la pueden usar los dos roles; para restringirla al admin, cambiar `RENOVAR_SOLO_ADMIN` a `true` en `api/admin/empresas.php`.
+- Está disponible en el formulario de edición y en las listas de avisos. Por defecto la pueden usar los dos roles; para restringirla únicamente al admin, cambiar `RENOVAR_SOLO_ADMIN` a `true` en `api/admin/empresas.php`.
 
 **Rubro y fecha de acreditación**
 
@@ -108,6 +110,13 @@ index.html → app.js → GET api/empresas.php
 ```
 
 La vigencia se verifica en varios puntos: en la sincronización, en el SQL y otra vez en `getEffectiveStatus` del cliente. Esa redundancia es intencional, por si el navegador queda abierto horas. El HTML que viene de la base se escapa con `escapeHTML` antes de insertarse con `innerHTML`.
+
+**Comportamiento de la interfaz pública** (`app.js` y `styles.css`):
+- El buscador sugiere empresas por nombre al escribir (mínimo 2 letras) y se navega con ↑ ↓ y Esc además del tabulador.
+- El filtro activo ("Todos" o "Ver los 20 rubros") se resalta en azul; en una búsqueda ninguno queda resaltado. El aviso de "sin resultados" desaparece solo a los 4 segundos o al cambiar de filtro.
+- El modal de contacto abre el programa de correo con un clic y ofrece un botón para copiar el correo, para quien no tenga uno configurado.
+- Si la búsqueda da una sola empresa, la tarjeta se muestra en horizontal (solo en pantallas anchas).
+- El footer queda siempre al fondo de la página, aunque haya pocos resultados.
 
 #### 5.2 Login y sesión
 
@@ -147,13 +156,13 @@ POST admin/empresas.php?id=N&action=renovar   (fecha_renovacion)
 
 #### 5.5 Eliminar
 
-Solo admin. En una transacción se guarda en la bitácora una "foto" de la empresa (nombre, rubro, correos, fechas y estatus) y después se borra. Es lo único que queda de ella.
+Solo admin. En una transacción se guarda en la bitácora un resumen de la empresa (nombre, rubro, correos, fechas y estatus) y después se borra. Es lo único que queda de ella.
 
 #### 5.6 Logos
 
 `save_logo()` valida el tamaño (2 MB) y el tipo real con `finfo` más `getimagesize` (PNG, JPG o WEBP; el SVG se rechaza a propósito). Guarda el archivo en `src/logo/`.
 
-Al reemplazar o eliminar, `delete_logo_if_unused()` borra el archivo solo si ninguna otra empresa lo usa, porque varios logos están compartidos (Dalton, Hersa). Si falla la transacción, se borra el archivo recién subido.
+En la base se guarda solo el nombre del archivo (por ejemplo `empresa_ab12cd.png`); la página pública le antepone `src/logo/`. Al reemplazar o eliminar desde el panel, `delete_logo_if_unused()` borra el archivo solo si ninguna otra empresa lo usa, porque varios logos están compartidos (Dalton, Hersa). Si falla la transacción, se borra el archivo recién subido.
 
 #### 5.7 Usuarios y roles
 
@@ -181,7 +190,7 @@ Acciones registradas: alta, edición, renovación, eliminación, baja por vencim
 
 - **Sincronización de vigencias (sin cron).** `vig_sincronizar()` corre en cada petición al directorio público y al panel. Busca las empresas cuyo estatus guardado no coincide con su vigencia, lo corrige y registra la baja por vencimiento o la reactivación. Cada actualización se condiciona al estatus anterior, de modo que dos peticiones simultáneas no duplican el registro.
 - **Zona horaria.** PHP fija `America/Mexico_City` y la fecha de hoy se pasa como parámetro, en lugar de usar `CURDATE()`, para no depender de la zona del servidor MySQL.
-- **Defensa en profundidad.** Consultas preparadas, escape de HTML en ambos clientes, CSRF, `.htaccess` que bloquea archivos internos y ejecución de scripts en `src/logo/`, y errores internos que van al log sin exponerse.
+- **Defensa en profundidad.** Consultas preparadas, escape de HTML en ambos clientes, CSRF, `.htaccess` que bloquea archivos internos y ejecución de scripts y listado de archivos en src/logo/, y errores internos que van al log sin exponerse.
 - **Atomicidad.** Cada cambio y su registro en la bitácora van en la misma transacción: si falla uno, no se guarda ninguno.
 
 ### 8. Limitaciones conocidas
@@ -192,9 +201,12 @@ Acciones registradas: alta, edición, renovación, eliminación, baja por vencim
 - Como el directorio público también sincroniza vigencias, **el usuario de MySQL necesita permisos de lectura y escritura** (SELECT, INSERT, UPDATE y DELETE).
 - El freno de fuerza bruta es por sesión; un atacante que borre cookies lo evade. Conviene fail2ban o límites en Apache.
 - El GET del admin trae todas las empresas. Con cientos va bien; con miles habría que paginar en el servidor.
-- No hay recuperación de contraseña (decisión deliberada: solo entra personal con permisos; un admin puede cambiar la contraseña de otro, y el primero se restablece con `crear_admin.php`). El endpoint público no usa caché.
+- No hay recuperación de contraseña (decisión deliberada: solo entra personal con permisos; un admin puede cambiar la contraseña de otro, y el primero se restablece con `crear_admin.php`).
 - En la bitácora, los movimientos de usuarios muestran el usuario afectado en la columna "Empresa".
 - La lista de los 20 rubros y sus íconos está escrita también en `index.html` (filtro) y en `js/app.js` (`iconsByCategory`). Si se agrega o renombra un rubro en la base de datos, hay que actualizar esos dos archivos con el nombre exacto.
+- Los logos de empresas eliminadas directamente en la base de datos (no desde el panel) se quedan en `src/logo/`. Se pueden identificar comparando la carpeta con `SELECT DISTINCT logo FROM empresas`.
+- El enlace de correo (`mailto:`) depende del programa de correo que tenga configurado cada visitante; por eso el modal incluye el botón de copiar.
+- El botón de copiar usa el portapapeles del navegador, que requiere HTTPS o `localhost`. Hay un método alternativo para otros casos.
 
 ### 9. Correcciones manuales (solo desde la base de datos)
 
@@ -229,6 +241,8 @@ UPDATE empresas SET rubro_id = 5 WHERE id = 123;
 5. Público: `http://localhost/(nombre_proyecto)/` · Admin: `http://localhost/(nombre_proyecto)/admin/login.html`.
    Los demás usuarios (admin o editor) se crean desde la pestaña **Usuarios**.
 
+   Respaldos: hay que guardar la base de datos y la carpeta `src/logo/` (los logos no están en git). El procedimiento está en `DESPLIEGUE.md`.
+
 ### Servidor Linux (producción: Apache + PHP + MySQL)
 
 La instalación en el servidor de la Contraloría (paquetes, usuario de base de datos, permisos, HTTPS, respaldos y pruebas de aceptación) está en **[DESPLIEGUE.md](DESPLIEGUE.md)**.
@@ -236,4 +250,5 @@ La instalación en el servidor de la Contraloría (paquetes, usuario de base de 
 ## Pendientes antes de producción
 
 - Cargar las fechas reales de acreditación (de ellas salen la vigencia y el estatus) y los logos faltantes.
+- Eliminar las empresas, usuarios y logos de prueba; hacer un respaldo con los datos reales y, al final, vaciar la bitácora (`TRUNCATE TABLE bitacora;`).
 - Credenciales de la base de datos y contraseña del admin definitivas (solo en el `api/config.php` del servidor, nunca en el repositorio).
