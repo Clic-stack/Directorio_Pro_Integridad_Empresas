@@ -545,12 +545,13 @@ async function loadUsuarios() {
 $("u-form").addEventListener("submit", async (event) => {
     event.preventDefault();
     try {
+        const rol = $("u-rol").value;
         await api("admin/usuarios.php", {
             method: "POST",
-            json: { usuario: $("u-usuario").value.trim(), password: $("u-password").value, rol: $("u-rol").value },
+            json: { usuario: $("u-usuario").value.trim(), password: $("u-password").value, rol },
         });
         $("u-form").reset();
-        flash($("u-msg"), "Administrador creado.");
+        flash($("u-msg"), rol === "admin" ? "Administrador creado exitosamente." : "Editor creado exitosamente.");
         loadUsuarios();
     } catch (error) {
         alert(error.message);

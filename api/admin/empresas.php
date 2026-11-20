@@ -203,15 +203,20 @@ function save_logo(array $file, string $nombre): string
 }
 
 // Borra el archivo solo si ninguna otra empresa lo usa (varios logos están compartidos, p. ej. Dalton).
+// El valor guardado puede ser "archivo.png" o "src/logo/archivo.png".
 function delete_logo_if_unused(PDO $pdo, ?string $path): void
 {
-    if (!$path || !preg_match('#^' . LOGO_DIR_REL . '/[A-Za-z0-9_.-]+$#', $path)) {
+    if (!$path) {
         return;
     }
-    $stmt = $pdo->prepare('SELECT COUNT(*) FROM empresas WHERE logo = ?');
-    $stmt->execute([$path]);
+    $name = basename($path);
+    if (!preg_match('/^[A-Za-z0-9_.-]+$/', $name)) {
+        return;
+    }
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM empresas WHERE logo = ? OR logo = ?');
+    $stmt->execute([$name, LOGO_DIR_REL . '/' . $name]);
     if ((int) $stmt->fetchColumn() === 0) {
-        $abs = dirname(__DIR__, 2) . '/' . $path;
+        $abs = logo_dir_abs() . '/' . $name;
         if (is_file($abs)) {
             @unlink($abs);
         }
@@ -464,7 +469,7 @@ try {
         $pdo->rollBack();
     }
     if ($newLogo) {
-        @unlink(dirname(__DIR__, 2) . '/' . $newLogo);
+        @unlink(logo_dir_abs() . '/' . basename($newLogo));
     }
     error_log($e->getMessage());
     fail(500, 'No se pudo guardar la empresa.');

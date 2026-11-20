@@ -30,6 +30,9 @@ const iconsByCategory = {
     "Agroindustria, Alimentos y Bebidas (Incluye Sector Tequilero)": "🌾",
 }
 
+const COPY_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>`;
+const CHECK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>`;
+
 
 // Los datos los captura el admin: se escapan antes de insertarlos como HTML
 function escapeHTML(value) {
@@ -108,6 +111,25 @@ async function getCompany() {
 
 getCompany();
 
+function setActiveFilter(mode) {
+    document.getElementById("btn-company").classList.toggle("is-active", mode === "all");
+    document.getElementById("btn-category").classList.toggle("is-active", mode === "category");
+}
+
+setActiveFilter("all");
+
+let errorTimer;
+function showError() {
+    const message = document.getElementById("error-message");
+    message.hidden = false;
+    clearTimeout(errorTimer);
+    errorTimer = setTimeout(() => { message.hidden = true; }, 4000);
+}
+function hideError() {
+    clearTimeout(errorTimer);
+    document.getElementById("error-message").hidden = true;
+}
+
 function renderCard(companies) {
     const cardsHTML = companies.map(company => {
         const icon = iconsByCategory[company.rubro] || "🏢";
@@ -116,7 +138,8 @@ function renderCard(companies) {
             ? `<img src="src/logo/${escapeHTML(company.logo)}" alt="" class="icon-card-img">`
             : icon;
         const status = getEffectiveStatus(company);
-        return `<div class="company-card" data-id="${escapeHTML(company.id)}" data-category="${escapeHTML(company.rubro)}" data-status="${escapeHTML(status)}">
+        const singleClass = filteredCompanies.length === 1 ? " is-single" : "";
+        return `<div class="company-card${singleClass}" data-id="${escapeHTML(company.id)}" data-category="${escapeHTML(company.rubro)}" data-status="${escapeHTML(status)}">
         <div class="top-card">
         <span class="${iconClass}">${iconContent}</span>
         <span class="badge">${escapeHTML(status)}</span>
@@ -183,6 +206,8 @@ document.getElementById("option-list").addEventListener("click", (event) => {
         getPage(1);
         renderPageNumbers(totalPages);
         document.getElementById("option-list").hidden = true;
+        setActiveFilter("category");
+        hideError();
     }
 });
 
@@ -191,12 +216,15 @@ document.getElementById("btn-company").addEventListener("click", () => {
     totalPages = Math.ceil(filteredCompanies.length / COMPANIES_PER_PAGE);
     getPage(1);
     renderPageNumbers(totalPages);
+    setActiveFilter("all");
+    hideError();
 });
 
-document.getElementById("search-form").addEventListener("submit", event => {
-    event.preventDefault();
-    const searchText = document.getElementById("search-input").value;
-    const text = searchText.toLowerCase();
+const searchInput = document.getElementById("search-input");
+const suggestionsList = document.getElementById("search-suggestions");
+
+function runSearch(searchText) {
+    const text = searchText.trim().toLowerCase();
     filteredCompanies = allCompanies.filter(company => {
         const matchName = company.nombre.toLowerCase().includes(text);
         const matchCategory = company.rubro.toLowerCase().includes(text);
@@ -208,18 +236,70 @@ document.getElementById("search-form").addEventListener("submit", event => {
     currentPage = 1;
     getPage(1);
     renderPageNumbers(totalPages);
+    setActiveFilter(text === "" ? "all" : "search");
 
-    const errorMessage = document.getElementById("error-message");
     if (filteredCompanies.length === 0) {
-        errorMessage.hidden = false;
+        showError();
     } else {
-        errorMessage.hidden = true;
+        hideError();
     }
 
     // Limpia el buscador al terminar y cierra el teclado en celulares
-    const searchInput = document.getElementById("search-input");
+    suggestionsList.innerHTML = "";
     searchInput.value = "";
     searchInput.blur();
+}
+
+document.getElementById("search-form").addEventListener("submit", event => {
+    event.preventDefault();
+    runSearch(searchInput.value);
+});
+
+// Sugerencias mientras se escribe (por nombre de empresa)
+searchInput.addEventListener("input", () => {
+    const text = searchInput.value.trim().toLowerCase();
+    if (text.length < 2) {
+        suggestionsList.innerHTML = "";
+        return;
+    }
+    const matches = allCompanies
+        .filter(company => company.nombre.toLowerCase().includes(text))
+        .slice(0, 6);
+    suggestionsList.innerHTML = matches.map(company =>
+        `<li><button type="button" data-name="${escapeHTML(company.nombre)}">${escapeHTML(company.nombre)}</button></li>`
+    ).join("");
+});
+
+suggestionsList.addEventListener("click", event => {
+    const button = event.target.closest("button");
+    if (button) runSearch(button.dataset.name);
+});
+
+// Cierra las sugerencias al hacer clic fuera del buscador
+document.addEventListener("click", event => {
+    if (!event.target.closest("#search-form")) suggestionsList.innerHTML = "";
+});
+
+// Navegación por las sugerencias con el teclado (↑ ↓ Esc)
+document.getElementById("search-form").addEventListener("keydown", (event) => {
+    const buttons = [...suggestionsList.querySelectorAll("button")];
+    if (buttons.length === 0) return;
+    const index = buttons.indexOf(document.activeElement);
+
+    if (event.key === "ArrowDown") {
+        event.preventDefault();
+        buttons[index < buttons.length - 1 ? index + 1 : 0].focus();
+    } else if (event.key === "ArrowUp") {
+        event.preventDefault();
+        if (index > 0) {
+            buttons[index - 1].focus();
+        } else {
+            searchInput.focus();
+        }
+    } else if (event.key === "Escape") {
+        suggestionsList.innerHTML = "";
+        searchInput.focus();
+    }
 });
 
 document.getElementById("page-numbers").addEventListener("click", (event) => {
@@ -245,7 +325,6 @@ document.getElementById("btn-next-page").addEventListener("click", () => {
 })
 
 // CONTACTO 
- 
 document.getElementById("company-container").addEventListener("click", (event) => {
     if (event.target.classList.contains("btn-contact")) {
         const card = event.target.closest(".company-card");
@@ -256,7 +335,10 @@ document.getElementById("company-container").addEventListener("click", (event) =
  
         const options = [];
         company.contacto.emails.forEach(email => {
-            options.push(`<a class="contact-option" href="mailto:${escapeHTML(email)}">✉️ ${escapeHTML(email)}</a>`);
+            options.push(`<div class="contact-row">
+                <a class="contact-option" href="mailto:${escapeHTML(email)}">✉️ ${escapeHTML(email)}</a>
+                <button type="button" class="btn-copy" data-email="${escapeHTML(email)}" title="Copiar correo" aria-label="Copiar correo ${escapeHTML(email)}">${COPY_ICON}</button>
+                </div>`);
         });
         if (company.contacto?.telefono) {
             options.push(`<a class="contact-option" href="tel:${escapeHTML(company.contacto.telefono)}">📞 ${escapeHTML(company.contacto.telefono)}</a>`);
@@ -266,6 +348,35 @@ document.getElementById("company-container").addEventListener("click", (event) =
         document.getElementById("contact-menu-options").innerHTML = options.join("");
         document.getElementById("contact-menu").hidden = false;
     }
+});
+
+document.getElementById("contact-menu-options").addEventListener("click", async (event) => {
+    const button = event.target.closest(".btn-copy");
+    if (!button) return;
+
+    const email = button.dataset.email;
+    try {
+        await navigator.clipboard.writeText(email);
+    } catch (error) {
+        // Respaldo para navegadores o conexiones sin permiso de portapapeles
+        const temp = document.createElement("textarea");
+        temp.value = email;
+        temp.style.position = "fixed";
+        temp.style.opacity = "0";
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+    }
+
+    button.innerHTML = CHECK_ICON;
+    button.classList.add("copied");
+    button.title = "¡Copiado!";
+    setTimeout(() => {
+        button.innerHTML = COPY_ICON;
+        button.classList.remove("copied");
+        button.title = "Copiar correo";
+    }, 1500);
 });
  
 document.getElementById("btn-close-contact-menu").addEventListener("click", () => {
